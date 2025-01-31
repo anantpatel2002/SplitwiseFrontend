@@ -1,0 +1,9 @@
+.review-card{
+    border: 1px solid #E6E8EE;
+    box-shadow: 0px 2px 0px 0px #9B9D9F;
+}
+
+.review-card:hover{
+    box-shadow: 0px 1px 0px 0px #E6E8EE;
+    border-block-end: 0px;
+}

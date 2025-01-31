@@ -1,0 +1,27 @@
+.p-width{
+    max-width: 35%;
+}
+
+.dark-btn{
+    background-color: #4731685d;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #ffffff;
+    box-shadow: 0px 3px 0px 0px rgba(55, 59, 63, 0.5);
+    transition: border 0s;
+    width: 15%;
+    
+}
+
+.dark-btn:hover{
+    box-shadow: 0px 1px 0px 0px #ffffff;
+    border-block-end: 0px;
+
+}
+
+.texture-background{
+    background-image: url("../../../../public/facets.png");
+    background-size: 1000px 850px;
+    background-repeat: repeat-x;
+    background-position: center;
+}

@@ -1,0 +1,25 @@
+.heading-text{
+    color: #373B3F;
+}
+
+.pro-feature{
+    background-image: url("../../../../public/pro-feature.svg");
+    width: 18px;
+    height: 22px;
+    margin-left: 1px;
+}
+
+.core-feature{
+    background-image: url("../../../../public/core-feature.svg");
+    width: 20px;
+    height: 22px;
+    margin-left: 1px;
+}
+
+.core-feature, .pro-feature{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-right: 4px;
+    display: inline-block;
+}
