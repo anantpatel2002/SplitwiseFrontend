@@ -1,52 +1,51 @@
-<div class="d-flex flex-wrap justify-content-center align-items-end mx-auto" style="max-width: 80%;">
-    <div class="col-3 review-card px-3 py-4 m-2 rounded-1">
-        <div class="mb-5 fw-medium">
-            “Fundamental” for tracking finances. As good as WhatsApp for containing awkwardness.
+<!-- <div class="d-flex flex-wrap justify-content-center align-items-end mx-auto" style="max-width: 80%;">
+    @for (review of reviews; track $index) {
+        <div class="col-3 review-card px-3 py-4 m-2 rounded-1 d-flex flex-column justify-content-between" style="min-height: 200px;">
+            <div class="fw-medium">
+                {{review.reviewMessage}}
+            </div>
+            <div>
+                @if(review.imageSrc)
+                {<img [src]="review.imageSrc" alt="Financial Times" class="me-1" style="width: 30px;">}
+                <i class="ms-1 fw-medium">{{review.reviewer}}</i>
+            </div>
         </div>
-        <div>
-            <img src="ft-152c170779821a7cff1ab468de0412defae4b4bcd1430bdd7cfc4901c8d338fc.png" alt="Financial Times" style="width: 30px;">
-            <i class="ms-1 fw-medium">Financial Times</i>
+    }
+</div> -->
+
+<div class="container mx-auto" style="max-width: 65%;">
+    @for (review of reviews; track $index) {
+        <div class="row">
+            <div class="col review-card px-3 py-4 m-2 rounded-1 d-flex flex-column justify-content-between">
+                <div class="fw-medium mb-5">
+                    {{review[0].reviewMessage}}
+                </div>
+                <div>
+                    @if(review[0].imageSrc)
+                    {<img [src]="review[0].imageSrc" alt="Financial Times" class="me-1" style="width: 30px;">}
+                    <i class="ms-1 fw-medium">{{review[0].reviewer}}</i>
+                </div>
+            </div>
+            <div class="col review-card px-3 py-4 m-2 rounded-1 d-flex flex-column justify-content-between">
+                <div class="fw-medium mb-5">
+                    {{review[1].reviewMessage}}
+                </div>
+                <div>
+                    @if(review[1].imageSrc)
+                    {<img [src]="review[1].imageSrc" alt="Financial Times" class="me-1" style="width: 30px;">}
+                    <i class="ms-1 fw-medium">{{review[1].reviewer}}</i>
+                </div>
+            </div>
+            <div class="col review-card px-3 py-4 m-2 rounded-1 d-flex flex-column justify-content-between">
+                <div class="fw-medium mb-5">
+                    {{review[2].reviewMessage}}
+                </div>
+                <div>
+                    @if(review[2].imageSrc)
+                    {<img [src]="review[2].imageSrc" alt="Financial Times" class="me-1" style="width: 30px;">}
+                    <i class="ms-1 fw-medium">{{review[2].reviewer}}</i>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="col-3 review-card px-3 py-4 m-2 rounded-1">
-        <div class="mb-5 fw-medium">
-            “Fundamental” for tracking finances. As good as WhatsApp for containing awkwardness.
-        </div>
-        <div>
-            <img src="ft-152c170779821a7cff1ab468de0412defae4b4bcd1430bdd7cfc4901c8d338fc.png" alt="Financial Times" style="width: 30px;">
-            <i class="ms-1 fw-medium">Financial Times</i>
-        </div>
-    </div><div class="col-3 review-card px-3 py-4 m-2 rounded-1">
-        <div class="mb-5 fw-medium">
-            “Fundamental” for tracking finances. As good as WhatsApp for containing awkwardness.
-        </div>
-        <div>
-            <img src="ft-152c170779821a7cff1ab468de0412defae4b4bcd1430bdd7cfc4901c8d338fc.png" alt="Financial Times" style="width: 30px;">
-            <i class="ms-1 fw-medium">Financial Times</i>
-        </div>
-    </div><div class="col-3 review-card px-3 py-4 m-2 rounded-1">
-        <div class="mb-5 fw-medium">
-            “Fundamental” for tracking finances. As good as WhatsApp for containing awkwardness.
-        </div>
-        <div>
-            <img src="ft-152c170779821a7cff1ab468de0412defae4b4bcd1430bdd7cfc4901c8d338fc.png" alt="Financial Times" style="width: 30px;">
-            <i class="ms-1 fw-medium">Financial Times</i>
-        </div>
-    </div><div class="col-3 review-card px-3 py-4 m-2 rounded-1">
-        <div class="mb-5 fw-medium">
-            “Fundamental” for tracking finances. As good as WhatsApp for containing awkwardness.
-        </div>
-        <div>
-            <img src="ft-152c170779821a7cff1ab468de0412defae4b4bcd1430bdd7cfc4901c8d338fc.png" alt="Financial Times" style="width: 30px;">
-            <i class="ms-1 fw-medium">Financial Times</i>
-        </div>
-    </div><div class="col-3 review-card px-3 py-4 m-2 rounded-1">
-        <div class="mb-5 fw-medium">
-            “Fundamental” for tracking finances. As good as WhatsApp for containing awkwardness.
-        </div>
-        <div>
-            <img src="ft-152c170779821a7cff1ab468de0412defae4b4bcd1430bdd7cfc4901c8d338fc.png" alt="Financial Times" style="width: 30px;">
-            <i class="ms-1 fw-medium">Financial Times</i>
-        </div>
-    </div>
+    }
 </div>

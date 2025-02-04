@@ -1,0 +1,28 @@
+ul{
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+
+.custom-font-size{
+    font-size: 14px;
+}
+
+.light-grey-border{
+    border-inline-end: 1px solid #E6E8EE;
+}
+
+.green-theme-text{
+    color: #1CC29F;
+}
+
+.orange-theme-text{
+    color: #EC7041;
+}
+
+.black-theme-text{
+    color: #373C40;
+}
+
+.text-grey-light{
+    color: #52595f;
+}
