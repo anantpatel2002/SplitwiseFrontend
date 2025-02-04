@@ -21,7 +21,7 @@
                         </li>
                         }
                         @else {
-                            <li [class]="facet.name" class="opacity-40" role="button" [style.pointer-events]="isDisabled()?'none':'auto'" [id]="'facet-'+facet.id" (click)="changeFacet(facet.id)">
+                            <li [class]="facet.name" class="opacity-40" role="button" [style.pointer-events]="isDisabled()?'none':'auto'" [id]="'facet-'+facet.id" (click)="changeFacet(facet.id,true)">
                                 <!-- <a href=""> -->
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" [attr.viewBox]="facet.buttonSvg.viewBox"
                                         style="width: 50px" [style]="'fill:'+facet.buttonSvg.fill">
