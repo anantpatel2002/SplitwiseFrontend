@@ -11,6 +11,8 @@ export class FacetsComponent implements OnInit {
 
   currentFacetSelected = signal<number>(0);
   isDisabled = signal<boolean>(false);
+    intervalId:any;
+
   facets = [
     {
       id: 1,
@@ -328,12 +330,24 @@ export class FacetsComponent implements OnInit {
 
   ngOnInit(): void {
       this.currentFacetSelected.set(1);
+
+      this.intervalId = setInterval(()=>{
+        
+        const currentFacetId = this.currentFacetSelected()%4+1;
+        this.changeFacet(currentFacetId,false);
+        
+      },4000);
   
   }
 
-  changeFacet(id: number) {
+  changeFacet(id: number, isManual: boolean) {
     console.log(id);
     
+    if(isManual){
+        clearInterval(this.intervalId);
+    }
+
+
     this.isDisabled.set(true);
     const currentFacetId = this.currentFacetSelected();
 
