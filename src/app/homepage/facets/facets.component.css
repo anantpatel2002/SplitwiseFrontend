@@ -7,7 +7,7 @@ ul li{
 }
 
 .facet{
-    margin-top: 50px;
+    margin-top: 25px;
     padding-top: 50px;
     padding-bottom: 20px;
 
@@ -35,13 +35,13 @@ ul li{
 }
 
 .dark-btn{
-    /* background-color: #1CC29F; */
+    background-color: #1CC29F; 
     color: white;
     font-weight: bold;
     box-shadow: 0px 2px 0px 0px rgba(55, 59, 63, 0.5);
     transition: transform 0.1s ease, box-shadow 0.1s ease;
     
-}
+}*/
 
 .dark-btn:hover{
     box-shadow: none;
