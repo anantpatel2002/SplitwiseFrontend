@@ -1,0 +1,56 @@
+.footer{
+    background-color: #666666;
+    padding: 20px;
+}
+
+.flex-container{
+    display: flex;
+    justify-content:space-evenly;
+    gap: 100px;
+    padding: 10px  20px;
+    text-shadow: 0 -1px #000;
+}
+
+.about-us{
+    color: #fff;
+}
+
+.made-with{
+    font-size: 27px;
+}
+
+#copyright{
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.footer-links{
+    text-align: end;
+}
+
+.footer-links .block-link img{
+    height: 43px;
+}
+
+.footer-links .links a{
+    border-bottom: 1px dashed #aaa;
+    font-weight:500;
+}
+
+.footer-links .links a:hover{
+    border-bottom: 1px dashed #fff;
+}
+
+.footer-links .links, .footer-links .links a{
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    text-decoration:none;
+}
+
+.footer-links>a{
+    margin-left: 15px;
+}
+
+

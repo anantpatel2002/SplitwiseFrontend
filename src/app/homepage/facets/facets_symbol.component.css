@@ -1,0 +1,586 @@
+/* .lg-any, .lg-heart, .lg-house, .lg-plane {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.lg-icon path {
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes sp1 {
+    0%,
+    to {
+      fill: #1cc29f;
+    }
+  
+    40% {
+      fill: #ace4d6;
+    }
+  }
+  
+  .s-p1 {
+    -webkit-animation-name: sp1;
+    animation-name: sp1;
+    fill: #1cc29f;
+  }
+  
+  .adu4 {
+    -webkit-animation-duration: 6s;
+    animation-duration: 6s;
+  }
+  
+  @keyframes sh6 {
+    0%,
+    to {
+      fill: #8f4ed3;
+    }
+  
+    55% {
+      fill: #4a276d;
+    }
+  }
+  
+  .s-h6 {
+    -webkit-animation-name: sh6;
+    animation-name: sh6;
+    fill: #8f4ed3;
+  }
+  
+  .adu2 {
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+  }
+  
+  @keyframes sa25 {
+    0%,
+    to {
+      fill: #363b3f;
+    }
+  
+    50% {
+      fill: #363b3f;
+    }
+  }
+  
+  .s-a25 {
+    -webkit-animation-name: sa25;
+    animation-name: sa25;
+    fill: #363b3f;
+  }
+  
+  @keyframes sa113 {
+    0%,
+    to {
+      fill: #747a80;
+    }
+  
+    50% {
+      fill: #505960;
+    }
+  }
+  
+  .s-a113 {
+    -webkit-animation-name: sa113;
+    animation-name: sa113;
+    fill: #747a80;
+  }
+  
+  @keyframes sh4 {
+    0%,
+    to {
+      fill: #a473db;
+    }
+  
+    25% {
+      fill: #dec9f1;
+    }
+  }
+  
+  .s-h4 {
+    -webkit-animation-name: sh4;
+    animation-name: sh4;
+    fill: #a473db;
+  }
+  
+  .ad1 {
+    -webkit-animation-delay: -1s;
+    animation-delay: -1s;
+  }
+  
+  @keyframes sh9 {
+    0%,
+    to {
+      fill: #ece0f7;
+    }
+  
+    60% {
+      fill: #d0b3eb;
+    }
+  }
+  
+  .s-h9 {
+    -webkit-animation-name: sh9;
+    animation-name: sh9;
+    fill: #ece0f7;
+  }
+  
+  @keyframes sp28 {
+    0%,
+    to {
+      fill: #ebf7f4;
+    }
+  
+    35% {
+      fill: #fff;
+    }
+  }
+  
+  .s-p28 {
+    -webkit-animation-name: sp28;
+    animation-name: sp28;
+    fill: #ebf7f4;
+  }
+  
+  .ad2 {
+    -webkit-animation-delay: -2s;
+    animation-delay: -2s;
+  }
+  
+  @keyframes sa19 {
+    0%,
+    to {
+      fill: #757a7e;
+    }
+  
+    50% {
+      fill: #52595f;
+    }
+  }
+  
+  .s-a19 {
+    -webkit-animation-name: sa19;
+    animation-name: sa19;
+    fill: #52595f;
+  }
+  
+  .s-ht16 {
+    fill: none;
+  }
+  
+  @keyframes sh8 {
+    0%,
+    to {
+      fill: #d0b3eb;
+    }
+  
+    35% {
+      fill: #ece0f7;
+    }
+  }
+  
+  .s-h8 {
+    -webkit-animation-name: sh8;
+    animation-name: sh8;
+    fill: #d0b3eb;
+  }
+  
+  @keyframes sh7 {
+    0%,
+    to {
+      fill: #4a276d;
+    }
+  
+    50% {
+      fill: #8f4ed3;
+    }
+  }
+  
+  .s-h7 {
+    -webkit-animation-name: sh7;
+    animation-name: sh7;
+    fill: #4a276d;
+  }
+  
+  @keyframes sa18 {
+    0%,
+    to {
+      fill: #909599;
+    }
+  
+    50% {
+      fill: #c4c8cf;
+    }
+  }
+  
+  .s-a18 {
+    -webkit-animation-name: sa18;
+    animation-name: sa18;
+    fill: #909599;
+  }
+  
+  @keyframes sa21 {
+    0%,
+    to {
+      fill: #373b3f;
+    }
+  
+    50% {
+      fill: #909498;
+    }
+  }
+  
+  .s-a21 {
+    -webkit-animation-name: sa21;
+    animation-name: sa21;
+    fill: #373b3f;
+  }
+  
+  .adu3 {
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+  }
+  
+  .adu1 {
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+  }
+  
+  @keyframes sh5 {
+    0%,
+    to {
+      fill: #dec9f1;
+    }
+  
+    45% {
+      fill: #a473db;
+    }
+  }
+  
+  .s-h5 {
+    -webkit-animation-name: sh5;
+    animation-name: sh5;
+    fill: #dec9f1;
+  }
+  
+  @keyframes sht14 {
+    0%,
+    to {
+      fill: #c71e57;
+    }
+  
+    60% {
+      fill: #5b0015;
+    }
+  }
+  
+  .s-ht14 {
+    fill: #5b0015;
+    -webkit-animation-name: sht14;
+    animation-name: sht14;
+  }
+  
+  .ad4 {
+    -webkit-animation-delay: -4s;
+    animation-delay: -4s;
+  }
+  
+  @keyframes sht12 {
+    0%,
+    to {
+      fill: #880020;
+    }
+  
+    50% {
+      fill: #b4002b;
+    }
+  }
+  
+  .s-ht12 {
+    fill: #880020;
+    -webkit-animation-name: sht12;
+    animation-name: sht12;
+  }
+  
+  @keyframes sa114 {
+    0%,
+    to {
+      fill: #505960;
+    }
+  
+    50% {
+      fill: #747a80;
+    }
+  }
+  
+  .s-a114 {
+    -webkit-animation-name: sa114;
+    animation-name: sa114;
+    fill: #505960;
+  }
+  
+  @keyframes sa17 {
+    0%,
+    to {
+      fill: #c4c8cf;
+    }
+  
+    50% {
+      fill: #909599;
+    }
+  }
+  
+  .s-a17 {
+    -webkit-animation-name: sa17;
+    animation-name: sa17;
+    fill: #c4c8cf;
+  }
+  
+  @keyframes sa22 {
+    0%,
+    to {
+      fill: #909498;
+    }
+  
+    50% {
+      fill: #373b3f;
+    }
+  }
+  
+  .s-a22 {
+    -webkit-animation-name: sa22;
+    animation-name: sa22;
+    fill: #909498;
+  }
+  
+  @keyframes sht13 {
+    0%,
+    to {
+      fill: #b4002b;
+    }
+  
+    50% {
+      fill: #880020;
+    }
+  }
+  
+  .s-ht13 {
+    fill: #b4002b;
+    -webkit-animation-name: sht13;
+    animation-name: sht13;
+  }
+  
+  @keyframes sht3 {
+    0%,
+    to {
+      fill: #c71e57;
+    }
+    30% {
+      fill: #920526;
+    }
+  }
+  
+  .s-ht15 {
+    fill: #c71e57;
+    -webkit-animation-name: sht3;
+    animation-name: sht3;
+  }
+  
+  @keyframes sht11 {
+    0%,
+    to {
+      fill: #f2c9d4;
+    }
+  
+    50% {
+      fill: #df7a96;
+    }
+  }
+  
+  .s-ht11 {
+    fill: #f2c9d4;
+    -webkit-animation-name: sht11;
+    animation-name: sht11;
+  }
+  
+  @keyframes sp3 {
+    0%,
+    to {
+      fill: #137863;
+    }
+  
+    60% {
+      fill: #0c3c32;
+    }
+  }
+  
+  .s-p3 {
+    -webkit-animation-name: sp3;
+    animation-name: sp3;
+    fill: #0c3c32;
+  }
+  
+  @keyframes sp0 {
+    0%,
+    to {
+      fill: #ace4d6;
+    }
+  
+    30% {
+      fill: #1cc29f;
+    }
+  }
+  
+  .s-p0 {
+    -webkit-animation-name: sp0;
+    animation-name: sp0;
+    fill: #ace4d6;
+  }
+  
+  @keyframes sp2 {
+    0%,
+    to {
+      fill: #137863;
+    }
+  
+    50% {
+      fill: #0c3c32;
+    }
+  }
+  
+  .s-p2 {
+    -webkit-animation-name: sp2;
+    animation-name: sp2;
+    fill: #137863;
+  }
+  
+  .ad3 {
+    -webkit-animation-delay: -3s;
+    animation-delay: -3s;
+  }
+  
+  .ad5 {
+    -webkit-animation-delay: -5s;
+    animation-delay: -5s;
+  }
+  
+  @keyframes sht10 {
+    0%,
+    to {
+      fill: #df7a96;
+    }
+  
+    40% {
+      fill: #f2c9d4;
+    }
+  }
+  
+  .s-ht10 {
+    fill: #df7a96;
+    -webkit-animation-name: sht10;
+    animation-name: sht10;
+  }
+  
+  @keyframes sa20 {
+    0%,
+    to {
+      fill: #757a7e;
+    }
+  
+    50% {
+      fill: #52595f;
+    }
+  }
+  
+  .s-a20 {
+    -webkit-animation-name: sa20;
+    animation-name: sa20;
+    fill: #757a7e;
+  }
+
+ 
+
+.opacity-40{
+    opacity: 0.4;
+}
+
+.hidden{
+    display: none;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+
+.animate-slow {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes fadeInIcon {
+    0% {
+        opacity: 0.4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeOutIcon {
+    0% {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0.4
+    }
+}
+
+.fade-in {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn
+}
+
+.fade-out {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut
+}
+
+.fade-in-icon {
+    -webkit-animation-name: fadeInIcon;
+    animation-name: fadeInIcon
+}
+
+.fade-out-icon {
+    -webkit-animation-name: fadeOutIcon;
+    animation-name: fadeOutIcon
+}
+   */
