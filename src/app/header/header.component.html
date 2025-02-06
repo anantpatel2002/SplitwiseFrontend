@@ -1,5 +1,5 @@
 <div class="container d-flex justify-content-between my-2" style="max-width: 1160px;">
-    <a routerLink="homepage">
+    <a [routerLink]="['/',{ outlets: { primary: ['homepage'], header: null, footer: null } }]">
         <div class=""><svg class="header-logo" xmlns="http://www.w3.org/2000/svg" width="140" height="48"
                 viewBox="0 0 140 48">
                 <path fill="#1CC29F"
@@ -20,8 +20,8 @@
     </a>
     <div class="d-flex align-items-center">
         <div>
-            <a class="btn btn rounded-1 light-btn" routerLink="login">Login</a>
+            <a class="btn btn rounded-1 light-btn" routerLink="/login">Login</a>
         </div>
-        <div class="btn btn rounded-1 dark-btn" routerLink="signup">Sign Up</div>
+        <div class="btn btn rounded-1 dark-btn" routerLink="/signup">Sign Up</div>
     </div>
 </div>
