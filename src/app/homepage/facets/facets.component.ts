@@ -1,59 +1,59 @@
-import { AfterViewInit, Component, inject, OnInit, Renderer2, signal, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, inject, OnDestroy, OnInit, Renderer2, signal, ViewEncapsulation } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-facets',
-  imports: [],
-  templateUrl: './facets.component.html',
-  styleUrl: './facets.component.css'
+    selector: 'app-facets',
+    imports: [],
+    templateUrl: './facets.component.html',
+    styleUrl: './facets.component.css'
 })
-export class FacetsComponent implements OnInit {
+export class FacetsComponent implements OnInit, OnDestroy {
 
-  currentFacetSelected = signal<number>(0);
-  isDisabled = signal<boolean>(false);
-    intervalId:any;
+    currentFacetSelected = signal<number>(0);
+    isDisabled = signal<boolean>(false);
+    intervalId: any;
 
-  facets = [
-    {
-      id: 1,
-      name: "plane",
-      buttonSvg: {
-        d: "M7.844 0L1.961 3.5l11.766 7 3.922 2.333L9.805 17.5 3.922 14 0 16.333l3.922 2.334 1.961 1.166L3.922 21l1.961 1.167V24.5l1.961-1.167v7L11.766 28v-7l7.844-4.667V35l3.922-2.333 1.96-1.167v-7l1.962-1.167V21l-1.961 1.167v-2.334l1.96-1.166v-2.334l-1.96 1.167v-4.667l5.883-3.5L35.298 7V4.667L33.337 3.5l-9.805 5.833L19.61 7l1.961-1.167-1.961-1.166-1.961 1.166-1.961-1.166 1.96-1.167-1.96-1.167L13.727 3.5z",
-        viewBox: "0 0 36 35",
-        fill: "#1cc29f"
-      }
-    },
-    {
-      id: 2,
-      name: "house",
-      buttonSvg: {
-        d: "M27.736 15.229V31.02H20.56V22.6h-7.177v8.423H6.207V15.228l7.176-4.211 3.588-2.106 10.765 6.317zm-.03-6.335l5.412 3.176v2.106H29.53l-12.559-7.37-12.558 7.37H.824V12.07l16.147-9.475 7.177 4.211V.49h3.557v8.405z",
-        viewBox: "0 0 34 32",
-        fill: "#8656cd"
-      }
-    },
-    {
-      id: 3,
-      name: "heart",
-      buttonSvg: {
-        d: "M15.163 4.311L7.653-.043.143 4.311v15.237l15.02 8.707 15.02-8.707V4.311l-7.51-4.354z",
-        viewBox: "0 0 31 29",
-        fill: "#a6002f"
-      }
-    },
-    {
-      id: 4,
-      name: "any",
-      buttonSvg: {
-        d: "M11.673.979v9.055L3.519 5.506.461 10.6l8.154 4.528-8.154 4.527L3.52 24.75l8.154-4.528v9.056h6.115V20.22l8.154 4.528L29 19.655l-8.154-4.527L29 10.6l-3.058-5.094-8.154 4.528V.979z",
-        viewBox: "0 0 29 30",
-        fill: "#383b3f"
-      }
-    }
-  ]
+    facets = [
+        {
+            id: 1,
+            name: "plane",
+            buttonSvg: {
+                d: "M7.844 0L1.961 3.5l11.766 7 3.922 2.333L9.805 17.5 3.922 14 0 16.333l3.922 2.334 1.961 1.166L3.922 21l1.961 1.167V24.5l1.961-1.167v7L11.766 28v-7l7.844-4.667V35l3.922-2.333 1.96-1.167v-7l1.962-1.167V21l-1.961 1.167v-2.334l1.96-1.166v-2.334l-1.96 1.167v-4.667l5.883-3.5L35.298 7V4.667L33.337 3.5l-9.805 5.833L19.61 7l1.961-1.167-1.961-1.166-1.961 1.166-1.961-1.166 1.96-1.167-1.96-1.167L13.727 3.5z",
+                viewBox: "0 0 36 35",
+                fill: "#1cc29f"
+            }
+        },
+        {
+            id: 2,
+            name: "house",
+            buttonSvg: {
+                d: "M27.736 15.229V31.02H20.56V22.6h-7.177v8.423H6.207V15.228l7.176-4.211 3.588-2.106 10.765 6.317zm-.03-6.335l5.412 3.176v2.106H29.53l-12.559-7.37-12.558 7.37H.824V12.07l16.147-9.475 7.177 4.211V.49h3.557v8.405z",
+                viewBox: "0 0 34 32",
+                fill: "#8656cd"
+            }
+        },
+        {
+            id: 3,
+            name: "heart",
+            buttonSvg: {
+                d: "M15.163 4.311L7.653-.043.143 4.311v15.237l15.02 8.707 15.02-8.707V4.311l-7.51-4.354z",
+                viewBox: "0 0 31 29",
+                fill: "#a6002f"
+            }
+        },
+        {
+            id: 4,
+            name: "any",
+            buttonSvg: {
+                d: "M11.673.979v9.055L3.519 5.506.461 10.6l8.154 4.528-8.154 4.527L3.52 24.75l8.154-4.528v9.056h6.115V20.22l8.154 4.528L29 19.655l-8.154-4.527L29 10.6l-3.058-5.094-8.154 4.528V.979z",
+                viewBox: "0 0 29 30",
+                fill: "#383b3f"
+            }
+        }
+    ]
 
-  facetSvg = [
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" class="lg-icon">
+    facetSvg = [
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" class="lg-icon">
                         <path class="s-p28 ad1 adu1"
                             d="M116.761 355.13h30.54l-30.54-17.633v17.632zm-30.54-70.53v17.632h30.54L86.221 284.6zm0-193.954v17.632l30.54-17.632h-30.54zm30.54 17.632h30.54l-30.54-17.632v17.632zm61.08 17.633v17.632h30.54l-30.54-17.632zm30.54 35.264v17.632l30.54-17.632h-30.54zm61.08 35.264v-17.632l-30.54 17.632h30.54zm91.62 52.897h-30.54l30.54 17.632v-17.633zM147.3 390.394l15.27 8.815 15.27-26.448-30.54 17.633zm15.27 44.08l15.27 8.816v-35.264l-15.27 26.448zm183.24 70.529l15.27 8.816v-35.264l-15.27 26.448zm-15.27-79.345l30.54-17.632-15.27-8.816-15.27 26.448zm30.54-88.16v-35.266l-15.27 26.449 15.27 8.816z">
                         </path>
@@ -70,7 +70,7 @@ export class FacetsComponent implements OnInit {
                             d="M544.32 125.91v17.633h30.54l-30.54-17.632zm0-35.264l-30.54 17.632h30.54V90.646zM452.7 214.071V196.44h-30.54l30.54 17.632zm0-35.265l30.54-17.631H452.7v17.631zm0-35.264l-30.54 17.633h30.54v-17.633zm61.08 0l-30.54 17.632v-17.631H452.7l30.54 17.632h30.54v-17.632l30.54 17.632h-30.54v17.631l30.54-17.631v-17.632h-30.54v-.001zm-91.62 88.162l30.54-17.633h-30.54v17.633zm-30.54-17.633h30.54V196.44l-30.54 17.632zM86.222 319.865h30.54v-17.633l-30.54 17.632zm-30.54-17.632l30.54-17.632-30.54-17.633v35.264l30.54 17.633v-17.633h-30.54zm61.08 35.264l30.54-17.632h-30.54v17.632zm-30.54-88.162l-30.54 17.633h30.54v-17.633zm30.54 17.633h-30.54V284.6l30.54-17.632zm30.54 123.425l30.54-17.632H147.3v17.632zm-30.54-52.896l-30.54 17.632 30.54 17.632v35.265l30.54-17.632-30.54-17.633h30.54V355.13l-30.54 17.632v-35.264zm61.08 17.632H147.3l30.54 17.632V355.13zm-30.54-35.264v35.264l30.54-17.632-30.54-17.632 30.54-17.632H147.3v17.632zm0-35.264l-30.54 17.631h30.54v-17.631zm30.54 52.896v17.632h30.54l-30.54-17.632zm30.54-264.483l-30.54 17.632h30.54V73.014zm0 35.264l30.54-17.632h-30.54v17.632zm30.54-17.632l30.54 17.632V90.646h-30.54zM147.3 37.749l-30.54 17.633h30.54V37.749zm0 105.793V90.646h-30.54l30.54 17.632-30.54 17.632 30.54 17.633h30.54V125.91l-30.54 17.631zm-30.54-17.632v-17.632h-30.54l30.54 17.632zm-30.54-35.264h-30.54l30.54 17.632V90.646zm91.62 17.632h30.54l-30.54-17.632v17.632zm61.08 52.896l-30.54-17.632v17.633h30.54l-30.54 17.631 30.54 17.633v-35.264l30.54-17.633h-30.54v17.632zm91.62-52.896v35.265l30.54-17.632-30.54-17.633zm-61.08 35.265L300 125.91l-30.54-17.633v35.265L300 161.175v-17.632h-30.54zm-91.62 17.632l30.54-17.633h-30.54v17.633zm91.62 0v17.632L300 161.175h-30.54zm61.08-17.632L300 161.175h30.54v-17.632zm30.54 52.896l30.54 17.632V196.44h-30.54zm-91.62-17.632v17.632H300l-30.54-17.632zm-30.54 17.632l30.54 17.632V196.44h-30.54zm30.54 17.632L300 231.703v-17.632h-30.54zm61.08-17.632h30.54l-30.54-17.632v17.632zm-91.62-70.528l-30.54 17.632h30.54V125.91zm0-17.633v17.633l30.54-17.633h-30.54zm-61.08 193.954h30.54V284.6l-30.54 17.632zm91.62-17.631l-30.54-17.633h30.54v-17.633l-30.54 17.633v35.264h-30.54v17.632l-30.54-17.632v17.632h30.54l30.54-17.632 30.54 17.632v-17.632h-30.54l30.54-17.631zm0-.001L300 266.968h-30.54V284.6zm0 0v17.632H300L269.46 284.6zM300 231.704l30.54 17.633L300 266.968h30.54V214.071L300 231.703zm61.08-35.264l-30.54 17.632h30.54V196.44zM300 302.233l30.54-17.632L300 266.968v35.264zm61.08-52.898v-17.631l-30.54 17.631h30.54zM300 196.44v17.632h30.54L300 196.44zm0 52.897h-30.54L300 266.967v-17.633zm-61.08 88.16l30.54-17.631h-30.54v17.631zm122.16-105.792l30.54-17.633h-30.54v17.633zM147.3 425.658l30.54-17.632-15.27-8.816-15.27 26.448zm0 35.264l15.27-26.448-15.27-8.816v35.264l30.54 17.633V443.29l-30.54 17.632zm45.81-8.816l15.27-26.448-30.54 17.632 15.27 8.816zm15.27-61.712l-15.27-8.816-15.27 26.448 30.54-17.632zm0-35.265l-30.54 17.632 15.27 8.817 15.27-26.45zm152.7 193.955l-15.271-8.816-15.27 26.448 30.54-17.632zm30.54-88.161l-15.27-8.817-15.27 26.449 30.54-17.632zm-61.08 0l30.54-17.633-15.27-8.816-15.27 26.448v35.265l30.54-17.632v35.264l15.27-26.448-15.27-8.816-30.54-17.633zm15.27 79.345l15.27-26.449-30.54 17.633 15.27 8.816zm45.809-44.081v-35.264l-15.27 26.448 15.27 8.816zm15.27 8.816l-15.27-8.816v35.265l15.27-26.449zm-76.35-8.816v35.265l15.27-26.45-15.27-8.815zm0-70.529l15.27 8.816 15.27-26.448-30.54 17.632zm45.81-44.08l-15.27 26.448 30.54-17.632-15.27-8.816zm0 70.529l15.27-26.449-30.54 17.632 15.27 8.816zm30.54-52.897l15.27 8.816-30.54 17.632 15.27 8.816 15.27-26.448 15.27-26.449-15.27-8.815-15.27 26.448zm-15.27-44.081l-15.27-8.816-15.27 26.448v-35.264l-30.54 17.632 15.27-26.448-15.27-8.816v35.264l30.54 17.632 30.54-17.632 30.54 17.632v-35.264l-30.54 17.632 15.27-26.448-15.27-8.816 30.54-17.632-15.27-8.817-15.27 26.449v35.264zM330.541 284.6l15.27 8.816 15.27-26.447v35.263l-15.27-8.816-15.27 26.449 30.54-17.633 15.27-26.448-15.27-8.816-30.54 17.632zm30.54-17.632l30.54-17.633h-30.54v17.633zM345.81 399.21l15.27-26.449-30.54 17.633 15.27 8.816zM452.7 284.6l-30.54 17.632 30.54 17.633V284.6zm-91.62 52.897l15.27 8.816 15.27-26.448-30.54 17.632zm30.54-88.161l-15.27 26.448 15.27 8.816v-35.264zm30.54 17.632L391.62 284.6l15.27 8.816 15.27-26.448z">
                         </path>
                     </svg>`,
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" class="lg-icon">
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" class="lg-icon">
                         <path class="s-h8 ad1 adu1"
                             d="M483.24 143.542v17.632H452.7zM269.46 90.646v17.632h-30.54zM177.84 178.807l30.54-17.632v35.264zM86.22 196.439v17.632H55.68zM452.7 90.646l30.54-17.633v17.633">
                         </path>
@@ -143,7 +143,7 @@ export class FacetsComponent implements OnInit {
                             d="M25.14 249.336h30.54l-30.54-17.633v17.633zm519.18 0l30.54 17.631v-17.632h-30.54zm-30.54 17.632h30.54v-17.633h-30.54v17.633zm-30.54-70.53H452.7v17.633h30.54l30.54 17.632v-17.632h-30.54v-17.632zm61.08 17.633l-30.54-17.632v17.632h30.54zm-61.08-35.265v17.633h30.54l-30.54-17.633zm-30.54-70.528h30.54L452.7 90.645v17.633zm-30.54 70.528v17.633h30.54l-30.54-17.633zm-30.54 17.633l30.54 17.632v-17.632h-30.54zm61.08 35.264v-17.632h-30.54l30.54 17.632zM300 73.013v17.633h30.54L300 73.013zm-30.54 52.897v17.632H300l-30.54-17.632zm122.16 17.632h-30.54l30.54 17.633v-17.633zm0 17.633h30.54v-17.633l-30.54-17.632v17.633h30.539l-30.54 17.632zm-61.08-17.633H300l30.54 17.633v-17.633zM452.7 90.645h-30.54v17.633l30.54 17.632v-17.632h-30.54l30.54-17.633zM147.3 196.44l30.54 17.632V196.44h-30.539l30.54-17.632v17.632h30.54l-30.54-17.632-30.54-17.632v35.264zm30.54-52.897l-30.54 17.633h30.54v-17.633zm30.54 0h-30.54l30.54 17.633v-17.633zm-91.62 35.265v17.632h30.54l-30.54-17.632zm91.62-52.897v17.632h30.54l-30.54-17.632zM86.22 231.703v17.633h30.54l-30.54-17.633zm0 35.265v-17.633H55.68l30.54 17.633zm152.7-88.161v-17.632h-30.54l30.54 17.632zm30.54-17.632l-30.54-17.633v17.633h30.54zM452.7 37.749h-30.54L452.7 55.38V37.75zm-91.62 229.219v-17.632l30.54 17.632v-17.632h-30.54l30.54-17.633-30.54-17.632v35.265l-30.54 17.632h30.54zm-30.54-17.633h30.54l-30.54-17.632v17.632zM300 284.6v17.633h30.54L300 284.599zm0 35.265v-17.632h-30.54v17.632H300zm122.16-70.528l-30.54 17.632h30.54v-17.633l-30.54-17.632v17.633h30.54zm-30.54 52.896l30.54 17.632v-17.632h-30.54zm-61.08-105.793H300v17.632h30.54V196.44zm30.54 105.793h-30.54l30.54 17.632v-17.632zm-91.62-88.161h-30.54l30.54 17.632v-17.632zm0-17.632v17.632H300l-30.54-17.632zm152.7 317.379h30.54l-30.54-17.632v17.632zm0-141.057v-17.633l-30.54 17.633h30.54zm0 52.896v-17.632h-30.54l30.54 17.632zm-30.54-17.632l-30.54-17.632v17.632h30.54l30.54-17.632v17.632h30.54l-30.54-17.632-30.54-17.632v35.264zm0-52.897h30.54l-30.54-17.632v17.632zm30.54-70.529v17.633h30.54l-30.54 17.632h30.54v-17.632l-30.54-17.633zm30.54 52.897v17.633h30.54l-30.54-17.633zm-30.54 17.632l30.54 17.633v-17.633h-30.54zm-91.62 17.633h30.54v-17.633h-30.54v17.633zm61.08 0v-17.633h-30.54l30.54 17.632zm61.08 52.896h-30.54l30.54 17.632v-17.632zm30.539 35.264l-30.54 17.633h30.54V460.92L452.7 443.29v17.632h30.54zm-61.08 0l30.54 17.633V460.92h-30.54zM330.54 319.864H300l30.54 17.633v-17.633zm36.825 144.686l-6.285-3.629v17.633h30.54V460.92h-30.54l6.285 3.629zm115.875-91.79H452.7l30.54 17.633v-17.632zm-183.24 0h30.54L300 355.128v17.632zm0-17.632h-30.54v17.633L300 390.393V372.76h-30.54L300 355.128zM238.92 284.6v17.633h30.54l-30.54-17.633zM116.76 408.025h30.54l-30.54-17.632v17.632zm122.16-105.793h-30.54l30.54 17.632v-17.632zm-30.54 35.264l-30.54-17.632v35.265l-30.54-17.633v17.633h30.54l30.54 17.632v-17.632h-30.539l30.54-17.633v17.633h30.539l-30.54 17.632h30.54v-17.632l-30.54-17.633zm-30.54-35.264h30.54l-30.54-17.633v17.633zm30.54 0l-30.54 17.632h30.54v-17.632zm0 105.793l30.54 17.632v-17.632h-30.54zm-30.54-88.161v-17.632H147.3l30.54 17.632zm-61.08 0h30.54v-17.632h-30.54v17.632zm152.7 17.633v-17.633h-30.54l30.54 17.633zm-61.08-88.162h30.54l-30.54 17.633h30.54v-17.633l-30.54-17.632v17.632zm-30.54 0l30.54 17.633v-17.633h-30.54zm30.54 264.483l-30.54-17.632v17.632h30.54l30.54-17.632-30.54-17.632v35.264zm-30.54-52.897l30.54-17.632-30.54-17.632v-17.632H147.3l30.54 17.633v35.263H147.3v17.633h30.54v-17.632l30.54 17.632V460.92h-30.54zm30.54 0h30.54l-30.54 17.633h30.54v-17.633l-30.54-17.632v17.632zm-61.08-35.264h-30.54l30.54 17.633v-17.633zm-30.54 52.897h30.54l-30.54-17.633v17.633z">
                         </path>
                     </svg>`,
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" class="lg-icon">
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" class="lg-icon">
                         <path class="s-ht16 adu4 ad1"
                             d="M173 216.867l-25.7 14.837zM513.78 231.704l26.759-15.45-26.76 15.45zM513.78 337.497l26.51-15.305-26.51 15.305zM513.78 372.761l5.952-3.436-5.952 3.436zM448.51 269.388L422.16 284.6zM386.78 405.23l-25.7-14.836zM177.84 390.394l27.85 16.079-27.85-16.08zM241.787 427.313l27.672 15.977h.001zM269.46 443.29zM422.16 108.278l30.54-17.632-30.54 17.632zM90.41 163.594l26.35 15.213zM238.92 390.394l26.62 15.368-26.62-15.369zM151.49 269.388l26.35 15.213zM422.16 390.393l-25.487 14.715 25.487-14.714 25.699 14.837-25.699-14.837zM269.46 337.497l-26.35-15.213 26.35 15.213zM238.92 284.6l26.35 15.213-26.35-15.213zM483.24 390.393l-25.7-14.837zM55.68 284.6l26.51 15.306zM365.27 458.503l26.35-15.213zM208.38 196.44l-25.897 14.951zM334.461 405.762l26.62-15.368h-.001zM86.22 266.968l30.54-17.632zM177.84 108.279l30.54-17.633-30.54 17.632-30.54-17.632 30.54 17.633zM483.24 390.393l26.619-15.368zM208.38 125.91l-26.35-15.212zM116.76 390.394l-26.759-15.45zM147.3 266.968l30.54-17.632-30.54 17.632-30.54-17.632 30.54 17.632-30.54 17.632 30.54-17.632zM55.68 178.807l24.87 14.358zM120.681 352.865l26.62-15.368h-.001zM330.54 231.704zM452.7 125.91l27.673-15.976L452.7 125.91zM479.319 352.865L452.7 337.497h-.001zM177.84 143.543l-15.27 8.816zM437.43 152.359l-15.27-8.816zM177.84 319.865l-15.27-8.816zM208.38 231.704L235 247.072zM120.681 216.336l26.619 15.368zM238.92 214.072l-30.54-17.632zM269.461 231.704zM330.54 443.29l26.35-15.213-26.35 15.213zM452.7 196.44l30.54 17.632 21.724-12.543-21.724 12.542zM483.24 284.6l26.35-15.212-26.35 15.212zM334.73 299.813l26.35-15.212zM391.62 337.497l25.346-14.633-25.346 14.633zM116.76 214.072l30.54-17.633-30.54 17.632-21.15-12.211 21.15 12.212zM208.38 161.175l-15.27-8.816 15.27 8.816zM386.426 164.174l-25.346 14.633zM330.54 372.762l-12.908-7.453zM483.24 178.807l26.51-15.305-26.51 15.305zM269.46 196.44l-30.54 17.631zM452.7 143.543V125.91v17.632zM330.54 231.704zM365.001 247.072l26.62-15.368h-.002zM59.87 322.284l26.35 15.213zM147.3 125.91l-24.182-13.96 24.182 13.96zM86.22 231.703l19.157-11.06zM59.601 216.336l26.619 15.368zM90.25 269.295l26.51 15.306zM513.78 266.968l-30.54-17.632zM269.46 478.554l-6.707-3.872 6.707 3.873zM479.319 216.336l-26.62 15.367.001.001zM422.16 249.336l30.54 17.632 28.457-16.43-28.457 16.43zM208.38 337.497l-25.346-14.633zM406.89 152.359l-15.27 8.816zM269.46 231.704zM269.46 372.761l12.908-7.452zM177.84 178.808l-26.619 15.368zM517.97 299.813l26.35-15.212zM269.46 161.175L300 143.543l30.54 17.632L300 143.543l-30.54 17.632zM519.661 193.044l24.659-14.237zM330.54 337.497l26.35-15.213-26.35 15.213zM213.22 405.23l25.7-14.836zM422.16 178.807l26.62 15.369zM330.54 478.554l8.333-4.81zM427.001 352.334l25.699-14.837zM208.38 443.29l27.673 15.977zM391.62 196.44l25.897 14.951zM361.08 214.071l-30.54-17.632zM238.92 178.807l18.69-10.79-18.69 10.79-24.182-13.962zM416.966 111.277L391.62 125.91zM361.08 214.072l30.54-17.632-30.54 17.631zM452.7 231.704L427 216.867z">
                         </path>
@@ -216,7 +216,7 @@ export class FacetsComponent implements OnInit {
                             d="M116.76 249.336h30.54v-17.632l-26.619-15.368 26.62 15.368v-17.632h-30.54v52.897H147.3l-30.54-17.633zM483.24 284.6l-30.54-17.632h30.54v-17.632l-2.083 1.203-28.457 16.43-4.19 2.418-26.35 15.214-30.54 17.631h61.08l30.54 17.632V284.6zm-61.08-35.264l-30.54 17.632h30.54v-17.632zm30.54-17.633L427 216.868l-4.84-2.795v35.264h61.08v-35.264l-3.921 2.264-26.619 15.368zm-61.08-35.263v17.632h-30.54v35.264l3.921-2.264 26.618-15.368h.001l30.54-17.632V196.44h-30.54l25.897 14.951-25.897-14.951zm30.54 123.425l-5.194 2.999-25.345 14.633h-.001l-30.54 17.632v-35.264l-4.19 2.419-26.35 15.213-26.35-15.213 23.243 13.419 3.107 1.793v-17.631H300v35.264h61.08l-30.54 17.632h30.54v17.632l30.54-17.632v-17.632h30.54l4.841-2.795 25.699-14.837v-17.632h-30.54zm-30.54-52.897l-30.54-17.632v35.265l10.18 5.877 20.36 11.754v-35.264zm-30.54 35.264v17.633l30.54-17.633h-30.54zm0-88.16v-17.633h30.54l4.84-2.794 25.7-14.838v-17.632h-30.54l-5.194 2.999-25.345 14.633-30.54 17.632 30.54 17.632zm122.16-35.265l-30.54 17.632 30.54 17.632v-35.264zm-30.54-17.632l-30.54-17.632v17.632h30.54zM391.62 372.76v35.265l5.053-2.918 25.486-14.714h.001l30.54-17.632v-17.633h-30.54v17.633h-30.54zM269.46 231.704l24.438 14.11-24.437-14.11zm61.08 70.529zm0 0l4.19-2.42 26.35-15.213-30.54-17.632v35.265zm0-70.529l-4.69-2.708-20.656-11.925 25.345 14.633zm0 0l30.54-17.632-30.54-17.632v35.264zM147.3 302.233h61.08L177.84 284.6l-26.35-15.212-4.19-2.42-30.54 17.633v35.264l30.54-17.632zm30.54-88.161l-4.84 2.795-25.7 14.837 30.54 17.632v-35.264zm0 35.264v17.632h30.54l-30.54-17.632zm-61.08-35.264zm122.16 35.264l11.85-6.842 18.69-10.79v-17.632H300l-25.561 14.758-4.978 2.874 26.35 15.213 4.189 2.419v-35.264l9.381-5.417-9.38 5.416 30.539-17.631H300v17.631l-11.571-6.68-18.969-10.951-30.54 17.632-30.54 17.632L235 247.072l3.92 2.264zM147.3 372.762l30.54 17.632 27.85 16.079 2.69 1.553V372.76h-30.54V355.13H147.3v17.633zm61.08-105.794v35.264l20.36-11.754 10.18-5.877v-35.265l-30.54 17.632zm61.08-70.529l-30.54-17.632-24.182-13.961-6.358-3.67v-.001h-30.54v17.632l25.7 14.838 4.84 2.794h30.54v17.632l30.54-17.632zm-122.16 0l-30.54-17.632v35.264l30.54-17.632zm61.08 0h-30.54v17.633l30.54 17.632V196.44l-25.897 14.952 25.897-14.952zm0 211.587zm122.16-35.264L300 355.129v17.633h30.54l-17.245 9.956L300 390.393l-24.659-14.236L300 390.394l-30.539 17.632v17.632H300l-18.748-10.825-.22-.127-11.571-6.68H300v17.632l18.324-10.58.425-.244 11.79-6.808h.001l3.921-2.264 26.619-15.368-30.54-17.632zm-53.335-66.058l-7.744-4.471v17.632H300l-13.466-7.775-9.33-5.386zM300 355.129l-30.54-17.632-26.35-15.213-4.19-2.419v35.264l-30.54-17.632-25.346-14.633-5.194-2.999H147.3v17.633l25.7 14.837 4.84 2.794h30.54v17.632l30.54 17.633V372.76h30.54L300 355.13zm-30.54 17.632l-30.54-17.632h30.54v17.632zM300 425.658l30.54 17.632v-17.632H300zm-30.54-52.896l-30.54 17.631 26.619 15.369 3.92 2.263h.001v-35.264zm0 35.264zm0-105.793zm61.08-35.265L300 249.336h30.54v-17.632l-20.58 11.88-5.27 3.044-.776.448-.817.472-3.097 1.788v17.632h30.54zm-7.745 39.736l7.745-4.471L300 284.6l-26.35-15.214-4.19-2.418-30.54 17.631 26.35 15.213 4.19 2.42H300v17.632l5.328-3.076 17.467-10.085z">
                         </path>
                     </svg>`,
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" class="lg-icon">
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" class="lg-icon">
                         <path class="s-a18 ad21 adu1"
                             d="M284.698 452.419h-30.603l30.603 17.669zM284.698 452.419h30.604l-30.604-17.67z"></path>
                         <path class="s-a22 ad2 adu2" d="M315.302 434.75h-30.604l30.604-17.67z"></path>
@@ -318,131 +318,136 @@ export class FacetsComponent implements OnInit {
                         <path class="s-a25 adu2" d="M345.905 346.403v-17.668h-30.602zM315.302 328.734z"></path>
                         <path class="s-a114 ad1 adu3" d="M315.302 364.072v-17.669l-30.604 17.669h30.604z"></path>
                     </svg>`
-  ]
+    ]
 
-  facetSvgSafe: SafeHtml[] = [];
+    facetSvgSafe: SafeHtml[] = [];
 
-  constructor(private sanitizer: DomSanitizer, private renderer: Renderer2) {
-    this.facetSvg.forEach((svg) => {
-      this.facetSvgSafe.push(this.sanitizer.bypassSecurityTrustHtml(svg));
-    })
-  }
+    constructor(private sanitizer: DomSanitizer, private renderer: Renderer2) {
+        this.facetSvg.forEach((svg) => {
+            this.facetSvgSafe.push(this.sanitizer.bypassSecurityTrustHtml(svg));
+        })
+    }
 
-  ngOnInit(): void {
-      this.currentFacetSelected.set(1);
 
-      this.intervalId = setInterval(()=>{
-        
-        const currentFacetId = this.currentFacetSelected()%4+1;
-        this.changeFacet(currentFacetId,false);
-        
-      },4000);
-  
-  }
+    ngOnInit(): void {
+        this.currentFacetSelected.set(1);
 
-  changeFacet(id: number, isManual: boolean) {
-    console.log(id);
-    
-    if(isManual){
+        this.intervalId = setInterval(() => {
+
+            const currentFacetId = this.currentFacetSelected() % 4 + 1;
+            this.changeFacet(currentFacetId, false);
+
+        }, 4000);
+
+    }
+
+    changeFacet(id: number, isManual: boolean) {
+        console.log(id);
+
+        if (isManual) {
+            clearInterval(this.intervalId);
+        }
+
+
+        this.isDisabled.set(true);
+        const currentFacetId = this.currentFacetSelected();
+
+        this.renderer.addClass(document.getElementById('facet-' + currentFacetId), 'animated');
+        this.renderer.addClass(document.getElementById('facet-' + currentFacetId), 'fade-out-icon');
+
+
+        this.renderer.addClass(document.getElementById('facet-' + id), 'animated');
+        this.renderer.addClass(document.getElementById('facet-' + id), 'fade-in-icon');
+
+
+        this.renderer.removeClass(document.getElementById('facetDisplay-' + currentFacetId), 'animated-slow');
+        this.renderer.removeClass(document.getElementById('facetDisplay-' + currentFacetId), 'fade-in');
+        this.renderer.addClass(document.getElementById('facetDisplay-' + currentFacetId), 'animated-slow');
+        this.renderer.addClass(document.getElementById('facetDisplay-' + currentFacetId), 'fade-out');
+
+        this.renderer.addClass(document.getElementById('stmt-' + currentFacetId), 'animated');
+        this.renderer.addClass(document.getElementById('stmt-' + currentFacetId), 'fade-out');
+
+
+
+        if ((currentFacetId == 1 || currentFacetId == 4) && id == 2) {
+            this.renderer.removeClass(document.getElementById('signupbtn'), 'teal-bg');
+            this.renderer.addClass(document.getElementById('signupbtn'), 'animated');
+            this.renderer.addClass(document.getElementById('signupbtn'), 'teal-to-purple');
+        } else if (currentFacetId == 2 && (id == 1 || id == 4)) {
+            this.renderer.removeClass(document.getElementById('signupbtn'), 'purple-bg');
+            this.renderer.addClass(document.getElementById('signupbtn'), 'animated');
+            this.renderer.addClass(document.getElementById('signupbtn'), 'purple-to-teal');
+        } else if ((currentFacetId == 1 || currentFacetId == 4) && id == 3) {
+            this.renderer.removeClass(document.getElementById('signupbtn'), 'teal-bg');
+            this.renderer.addClass(document.getElementById('signupbtn'), 'animated');
+            this.renderer.addClass(document.getElementById('signupbtn'), 'teal-to-crimson');
+        } else if (currentFacetId == 3 && (id == 1 || id == 4)) {
+            this.renderer.removeClass(document.getElementById('signupbtn'), 'crimson-bg');
+            this.renderer.addClass(document.getElementById('signupbtn'), 'animated');
+            this.renderer.addClass(document.getElementById('signupbtn'), 'crimson-to-teal');
+        } else if (currentFacetId == 2 && id == 3) {
+            this.renderer.removeClass(document.getElementById('signupbtn'), 'purple-bg');
+            this.renderer.addClass(document.getElementById('signupbtn'), 'animated');
+            this.renderer.addClass(document.getElementById('signupbtn'), 'purple-to-crimson');
+        } else if (currentFacetId == 3 && id == 2) {
+            this.renderer.removeClass(document.getElementById('signupbtn'), 'crimson-bg');
+            this.renderer.addClass(document.getElementById('signupbtn'), 'animated');
+            this.renderer.addClass(document.getElementById('signupbtn'), 'crimson-to-purple');
+        }
+
+
+        setTimeout(() => {
+            this.renderer.removeClass(document.getElementById('facetDisplay-' + currentFacetId), 'animated-slow');
+            this.renderer.removeClass(document.getElementById('facetDisplay-' + currentFacetId), 'fade-out');
+
+            this.renderer.removeClass(document.getElementById('stmt-' + currentFacetId), 'animated-slow');
+            this.renderer.removeClass(document.getElementById('stmt-' + currentFacetId), 'fade-out');
+            this.renderer.addClass(document.getElementById('stmt-' + currentFacetId), 'hidden');
+
+            if ((currentFacetId == 1 || currentFacetId == 4) && id == 2) {
+                this.renderer.addClass(document.getElementById('signupbtn'), 'purple-bg');
+                this.renderer.removeClass(document.getElementById('signupbtn'), 'animated');
+                this.renderer.removeClass(document.getElementById('signupbtn'), 'teal-to-purple');
+            } else if (currentFacetId == 2 && (id == 1 || id == 4)) {
+                this.renderer.addClass(document.getElementById('signupbtn'), 'teal-bg');
+                this.renderer.removeClass(document.getElementById('signupbtn'), 'animated');
+                this.renderer.removeClass(document.getElementById('signupbtn'), 'purple-to-teal');
+            } else if ((currentFacetId == 1 || currentFacetId == 4) && id == 3) {
+                this.renderer.addClass(document.getElementById('signupbtn'), 'crimson-bg');
+                this.renderer.removeClass(document.getElementById('signupbtn'), 'animated');
+                this.renderer.removeClass(document.getElementById('signupbtn'), 'teal-to-crimson');
+            } else if (currentFacetId == 3 && (id == 1 || id == 4)) {
+                this.renderer.addClass(document.getElementById('signupbtn'), 'teal-bg');
+                this.renderer.removeClass(document.getElementById('signupbtn'), 'animated');
+                this.renderer.removeClass(document.getElementById('signupbtn'), 'crimson-to-teal');
+            } else if (currentFacetId == 2 && id == 3) {
+                this.renderer.addClass(document.getElementById('signupbtn'), 'crimson-bg');
+                this.renderer.removeClass(document.getElementById('signupbtn'), 'animated');
+                this.renderer.removeClass(document.getElementById('signupbtn'), 'purple-to-crimson');
+            } else if (currentFacetId == 3 && id == 2) {
+                this.renderer.addClass(document.getElementById('signupbtn'), 'purple-bg');
+                this.renderer.removeClass(document.getElementById('signupbtn'), 'animated');
+                this.renderer.removeClass(document.getElementById('signupbtn'), 'crimson-to-purple');
+            }
+
+            this.currentFacetSelected.set(id);
+
+            this.renderer.addClass(document.getElementById('facetDisplay-' + currentFacetId), 'animated-slow');
+            this.renderer.addClass(document.getElementById('facetDisplay-' + currentFacetId), 'fade-in');
+
+            this.renderer.removeClass(document.getElementById('stmt-' + id), 'hidden');
+            this.renderer.addClass(document.getElementById('stmt-' + id), 'animated');
+            this.renderer.addClass(document.getElementById('stmt-' + id), 'fade-in');
+
+            this.isDisabled.set(false);
+        }, 1000);
+
+
+    }
+
+    ngOnDestroy() {
         clearInterval(this.intervalId);
     }
-
-
-    this.isDisabled.set(true);
-    const currentFacetId = this.currentFacetSelected();
-
-    this.renderer.addClass(document.getElementById('facet-' + currentFacetId), 'animated');
-    this.renderer.addClass(document.getElementById('facet-' + currentFacetId), 'fade-out-icon');
-
-
-    this.renderer.addClass(document.getElementById('facet-' + id), 'animated');
-    this.renderer.addClass(document.getElementById('facet-' + id), 'fade-in-icon');
-
-
-    this.renderer.removeClass(document.getElementById('facetDisplay-' + currentFacetId), 'animated-slow');
-    this.renderer.removeClass(document.getElementById('facetDisplay-' + currentFacetId), 'fade-in');
-    this.renderer.addClass(document.getElementById('facetDisplay-' + currentFacetId), 'animated-slow');
-    this.renderer.addClass(document.getElementById('facetDisplay-' + currentFacetId), 'fade-out');
-
-    this.renderer.addClass(document.getElementById('stmt-' + currentFacetId), 'animated');
-    this.renderer.addClass(document.getElementById('stmt-' + currentFacetId), 'fade-out');
-
-    
-
-    if((currentFacetId ==1 || currentFacetId==4)&& id == 2){
-      this.renderer.removeClass(document.getElementById('signupbtn'), 'teal-bg');
-      this.renderer.addClass(document.getElementById('signupbtn'), 'animated');
-      this.renderer.addClass(document.getElementById('signupbtn'), 'teal-to-purple');
-    } else if(currentFacetId ==2 && (id == 1 || id == 4)){
-      this.renderer.removeClass(document.getElementById('signupbtn'), 'purple-bg');
-      this.renderer.addClass(document.getElementById('signupbtn'), 'animated');
-      this.renderer.addClass(document.getElementById('signupbtn'), 'purple-to-teal');
-    } else if((currentFacetId == 1 || currentFacetId == 4) && id == 3){
-      this.renderer.removeClass(document.getElementById('signupbtn'), 'teal-bg');
-      this.renderer.addClass(document.getElementById('signupbtn'), 'animated');
-      this.renderer.addClass(document.getElementById('signupbtn'), 'teal-to-crimson');
-    } else if(currentFacetId == 3 && (id == 1 || id == 4)){
-      this.renderer.removeClass(document.getElementById('signupbtn'), 'crimson-bg');
-      this.renderer.addClass(document.getElementById('signupbtn'), 'animated');
-      this.renderer.addClass(document.getElementById('signupbtn'), 'crimson-to-teal');
-    } else if(currentFacetId == 2 && id == 3){
-      this.renderer.removeClass(document.getElementById('signupbtn'), 'purple-bg');
-      this.renderer.addClass(document.getElementById('signupbtn'), 'animated');
-      this.renderer.addClass(document.getElementById('signupbtn'), 'purple-to-crimson');
-    } else if(currentFacetId == 3 && id == 2){
-      this.renderer.removeClass(document.getElementById('signupbtn'), 'crimson-bg');
-      this.renderer.addClass(document.getElementById('signupbtn'), 'animated');
-      this.renderer.addClass(document.getElementById('signupbtn'), 'crimson-to-purple');
-    }
-    
-    
-    setTimeout(() => {
-      this.renderer.removeClass(document.getElementById('facetDisplay-' + currentFacetId), 'animated-slow');
-      this.renderer.removeClass(document.getElementById('facetDisplay-' + currentFacetId), 'fade-out');
-      
-      this.renderer.removeClass(document.getElementById('stmt-' + currentFacetId), 'animated-slow');
-      this.renderer.removeClass(document.getElementById('stmt-' + currentFacetId), 'fade-out');
-      this.renderer.addClass(document.getElementById('stmt-' + currentFacetId), 'hidden');
-
-      if((currentFacetId ==1 || currentFacetId==4)&& id == 2){
-        this.renderer.addClass(document.getElementById('signupbtn'), 'purple-bg');
-        this.renderer.removeClass(document.getElementById('signupbtn'), 'animated');
-        this.renderer.removeClass(document.getElementById('signupbtn'), 'teal-to-purple');
-      } else if(currentFacetId ==2 && (id == 1 || id == 4)){
-        this.renderer.addClass(document.getElementById('signupbtn'), 'teal-bg');
-        this.renderer.removeClass(document.getElementById('signupbtn'), 'animated');
-        this.renderer.removeClass(document.getElementById('signupbtn'), 'purple-to-teal');
-      } else if((currentFacetId == 1 || currentFacetId == 4) && id == 3){
-        this.renderer.addClass(document.getElementById('signupbtn'), 'crimson-bg');
-        this.renderer.removeClass(document.getElementById('signupbtn'), 'animated');
-        this.renderer.removeClass(document.getElementById('signupbtn'), 'teal-to-crimson');
-      } else if(currentFacetId == 3 && (id == 1 || id == 4)){
-        this.renderer.addClass(document.getElementById('signupbtn'), 'teal-bg');
-        this.renderer.removeClass(document.getElementById('signupbtn'), 'animated');
-        this.renderer.removeClass(document.getElementById('signupbtn'), 'crimson-to-teal');
-      } else if(currentFacetId == 2 && id == 3){
-        this.renderer.addClass(document.getElementById('signupbtn'), 'crimson-bg');
-        this.renderer.removeClass(document.getElementById('signupbtn'), 'animated');
-        this.renderer.removeClass(document.getElementById('signupbtn'), 'purple-to-crimson');
-      } else if(currentFacetId == 3 && id == 2){
-        this.renderer.addClass(document.getElementById('signupbtn'), 'purple-bg');
-        this.renderer.removeClass(document.getElementById('signupbtn'), 'animated');
-        this.renderer.removeClass(document.getElementById('signupbtn'), 'crimson-to-purple');
-      }
-
-      this.currentFacetSelected.set(id);
-      
-      this.renderer.addClass(document.getElementById('facetDisplay-' + currentFacetId), 'animated-slow');
-      this.renderer.addClass(document.getElementById('facetDisplay-' + currentFacetId), 'fade-in');
-
-      this.renderer.removeClass(document.getElementById('stmt-' + id), 'hidden');
-      this.renderer.addClass(document.getElementById('stmt-' + id), 'animated');
-      this.renderer.addClass(document.getElementById('stmt-' + id), 'fade-in');
-
-      this.isDisabled.set(false);
-    }, 1000);
-
-
-  }
 
 }

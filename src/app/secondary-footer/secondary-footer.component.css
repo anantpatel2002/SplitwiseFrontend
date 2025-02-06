@@ -6,7 +6,7 @@
 .flex-container{
     display: flex;
     justify-content:space-evenly;
-    gap: 100px;
+    /* gap: 100px; */
     padding: 10px  20px;
     text-shadow: 0 -1px #000;
 }
@@ -53,4 +53,15 @@
     margin-left: 15px;
 }
 
+@media screen and (max-width: 1095px){
+    .flex-container{
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-links{
+        text-align: center;
+    }
+}
 
