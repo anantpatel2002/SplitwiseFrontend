@@ -1,0 +1,28 @@
+<div class="green-background" style="z-index: 5;" >
+    <div class="container d-flex justify-content-between align-items-center" style="max-width: 850px;" >
+        <img src="logo-with-name-shorter.svg" alt="logo" width="120" height="40px">
+        <div  class="position-relative">
+            <div class="d-flex align-items-center dropdown-button p-2" role="button" (click)="dropdownClick($event)">
+                <img class="dropdown-image" src="logo.svg" alt="logo" width="40" height="25px" >
+                <div class="ms-0 dropdown-name">Ishant Yadav</div>
+                <div class="dropdown-caret" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                      </svg>
+                </div>
+            </div>
+            <ul class="position-absolute rounded-1 hidden" #dropdown id="dropdown1" style="z-index: 10;">
+                <li class="rounded-top-1">Your Account</li>
+                <li>Create a group</li>
+                <li>Fairness Calculators</li>
+                <li>Contact Support</li>
+                <li class="rounded-bottom-1">Log out</li>
+            </ul>
+            <!-- <div class="position-absolute hidden" id="dropdown2" #dropdown style="top: 17px; left: 125px; z-index: 8;" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="fill: white;" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                    <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+                </svg>
+            </div> -->
+            <div class="triangle position-absolute hidden" id="dropdown2" #dropdown ></div>
+        </div> 
+</div>
