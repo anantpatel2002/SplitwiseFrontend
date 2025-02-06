@@ -1,4 +1,4 @@
-import { Component, inject, Renderer2 } from '@angular/core';
+import { Component, ElementRef, HostListener, inject, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-logged-in-header',
@@ -7,20 +7,29 @@ import { Component, inject, Renderer2 } from '@angular/core';
   styleUrl: './logged-in-header.component.css',
 })
 export class LoggedInHeaderComponent {
-  
-  
-  flag:boolean = false;
+  @ViewChild('dropdown', { static: true }) dropdown!: ElementRef;
+
+  flag: boolean = false;
   renderer = inject(Renderer2);
-  
-  dropdownClick() {
-    if(!this.flag)
-      {this.renderer.removeClass(document.getElementById('dropdown1'), 'hidden');
-    this.renderer.removeClass(document.getElementById('dropdown2'), 'hidden');}
-    else
-      {this.renderer.addClass(document.getElementById('dropdown1'), 'hidden');
-      this.renderer.addClass(document.getElementById('dropdown2'), 'hidden');}
+
+  dropdownClick(e:Event) {
+    e.stopPropagation();
+    
+    if (!this.flag) {
+      this.renderer.removeClass(document.getElementById('dropdown1'), 'hidden');
+      this.renderer.removeClass(document.getElementById('dropdown2'), 'hidden');
+    } else {
+      this.renderer.addClass(document.getElementById('dropdown1'), 'hidden');
+      this.renderer.addClass(document.getElementById('dropdown2'), 'hidden');
+    }
     this.flag = !this.flag;
     console.log(this.flag);
-    
+  }
+
+  @HostListener('document:click', ['$event'])
+  handleClickOutside(event: MouseEvent): void {
+    if (this.dropdown && !this.dropdown.nativeElement.contains(event.target) && this.flag) {
+      this.dropdownClick(event);
+    }
   }
 }
