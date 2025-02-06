@@ -1,4 +1,6 @@
-<!-- <app-header [style.display]="headerFooterFlag()?'block':'none'" ></app-header>
+<!-- <app-header [style.display]="headerFooterFlag()?'block':'none'" ></app-header> -->
+<router-outlet name="header" />
 <router-outlet />
-<app-footer [style.display]="headerFooterFlag()?'block':'none'"></app-footer> -->
-<app-logged-in-header></app-logged-in-header>
+<!-- <app-footer [style.display]="headerFooterFlag()?'block':'none'"></app-footer> -->
+<router-outlet name="footer" />
+<!-- <app-logged-in-header></app-logged-in-header> -->
