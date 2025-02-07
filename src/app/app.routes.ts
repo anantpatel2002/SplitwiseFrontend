@@ -16,7 +16,6 @@ export const routes: Routes = [
   // },
   {
     path: 'homepage',
-    component: AppComponent,
     children: [
       {
         path:'',
@@ -40,7 +39,6 @@ export const routes: Routes = [
   },
   {
     path:'login',
-    component: AppComponent,
     children: [
       {
         path:'',
@@ -60,7 +58,6 @@ export const routes: Routes = [
   },
   {
     path:'main-page',
-    component: AppComponent,
     children: [
       {
         path:'',
