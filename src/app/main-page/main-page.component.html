@@ -1,10 +1,14 @@
-<div class="main-div row bg-secondary">
+<div class="main-div row">
     <!-- <div class="row"> -->
-        <div class="col-3 left-sidebar bg-danger">a</div>
-        <div class="col-6 p-0 bg-primary center-div bg-success">
-            <router-outlet name="center-div"/>
-            <app-dashboard/>
+        <div class="col-3 p-0 left-sidebar">
+            <app-left-sidebar/>
         </div>
-        <div class="col-3 right-sidebar bg-warning">c</div>
+        <div class="col-6 p-0 bg-primary center-div bg-success">
+            <router-outlet/>
+            <!-- <app-dashboard/> -->
+        </div>
+        <div class="col-3 right-sidebar bg-warning">
+            <router-outlet name="right-sidebar"/>
+        </div>
     <!-- </div> -->
 </div>
