@@ -1,3 +1,169 @@
 <div class="h-100">
-    <div class="header-div bg-primary">a</div>
+    <div class="grey-bottom-border grey-background p-2 d-flex align-items-center fw-medium fs-5">
+        <span class="fw-bold fs-4">Dashboard</span>
+        <div class="btn rounded-1 orange-btn ms-auto">Add an expense</div>
+        <div class="btn rounded-1 green-btn ms-2">Settle up</div>
+    </div>
+    <div class="grey-bottom-border grey-background p-2 d-flex align-items-center justify-content-around fs-6 ">
+        <div class="d-flex flex-column align-items-center lh-sm grey-text">
+            <p class="mb-0 small-text">total balance</p>
+            <p class="mb-0 small-text">$0.00*</p>
+        </div>
+        <div class="light-grey-border seprator"></div>
+        <div class="d-flex flex-column align-items-center lh-sm grey-text">
+            <p class="mb-0 small-text">you owe</p>
+            <p class="mb-0 small-text">$0.00*</p>
+        </div>
+        <div class="light-grey-border seprator"></div>
+        <div class="d-flex flex-column align-items-center lh-sm grey-text">
+            <p class="mb-0 small-text">you are owed</p>
+            <p class="mb-0 small-text">$0.00*</p>
+        </div>
+    </div>
+    <p class="mb-0 grey-bottom-border text-center grey-text small-text grey-background">* You have balances in multiple currencies.</p>
+    <div class="d-flex justify-content-between py-2 px-3">
+        <div class="fw-medium grey-text medium-text">YOU OWE</div>
+        <div class="d-flex justify-content-center fw-medium ms-5">
+            <div class="d-flex align-items-center gap-1 px-1 rounded-start-1 grey-border light-grey-text active" id="listView" role="button" (click)="toggleListView('listView')">
+                <i class="bi bi-card-list "></i>
+                <div class="small-text">view as list</div>
+            </div>
+            <!-- <div class="view-dues-button-seperator border-div position-relative"></div> -->
+            <div class="d-flex align-items-center gap-1 px-1 rounded-end-1 grey-border light-grey-text view-dues-button" id="chartView" style="margin-left: -1px;" role="button" (click)="toggleListView('chartView')" >
+                <i class="bi bi-list "></i>
+                <div class="small-text">view as chart</div>
+            </div>
+        </div>
+        <div class="fw-medium grey-text medium-text">YOU ARE OWED</div>
+    </div>
+
+
+    <div class="d-flex pe-2" id="list">
+        <ul class="col-6 mb-0 ps-3 pe-3" id="owed" style="list-style-type:none;">
+            <li class="d-flex justify-content-start align-items-center  mt-3">
+                <img src="avatar-ruby16.png" class="me-2" height="35px" style="border-radius: 50%;" alt="avatar"/>
+                <div class="lh-sm">
+                    <div class="fw-medium ">
+                        Mayank Srivastava
+                    </div>
+                    <div class="orange-text medium-text">
+                        you owe <span class="fw-bold">INR70.00</span>
+                    </div>
+                </div>
+            </li>
+            <ul class="small-text grey-text ps-3 mt-1">
+                <li>
+                    Mayank owes you <span class="green-text">INR140.00</span> for "Non-group expenses"
+                </li>
+                <li>
+                    You owe mayank <span class="orange-text">INR210.00</span> for "Lunch"
+                </li>
+            </ul>
+            <li class="d-flex justify-content-start align-items-center mt-3">
+                <img src="avatar-green.png" class="me-2" height="35px" style="border-radius: 50%;" alt="avatar"/>
+                <div class="lh-sm">
+                    <div class="fw-medium ">
+                        Sumit Raj
+                    </div>
+                    <div class="orange-text medium-text">
+                        you owe <span class="fw-bold">INR328.76</span>
+                    </div>
+                </div>
+            </li>
+            <li class="d-flex justify-content-start align-items-center mt-3">
+                <img src="avatar-blue.png" class="me-2" height="35px" style="border-radius: 50%;" alt="avatar"/>
+                <div class="lh-sm">
+                    <div class="fw-medium ">
+                        Swayam Khare
+                    </div>
+                    <div class="orange-text medium-text">
+                        you owe <span class="fw-bold">INR298.56</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <ul class="col-6 mb-0 ps-3 light-grey-border-start" id="owed" style="list-style-type:none;">
+            <li class="d-flex justify-content-start align-items-center  mt-3">
+                <img src="avatar-green.png" class="me-2" height="35px" style="border-radius: 50%;" alt="avatar"/>
+                <div class="lh-sm">
+                    <div class="fw-medium ">
+                        Shanti Suman
+                    </div>
+                    <div class="green-text medium-text">
+                        owes you <span class="fw-bold">INR70.00</span>
+                    </div>
+                </div>
+            </li>
+            <ul class="small-text grey-text ps-3 mt-1">
+                <li>
+                    Mayank owes you <span class="green-text">INR210.00</span> for "Non-group expenses"
+                </li>
+                <li>
+                    You owe mayank <span class="orange-text">INR140.00</span> for "Lunch"
+                </li>
+            </ul>
+            <li class="d-flex justify-content-start align-items-center mt-3">
+                <img src="avatar-blue.png" class="me-2" height="35px" style="border-radius: 50%;" alt="avatar"/>
+                <div class="lh-sm">
+                    <div class="fw-medium ">
+                        Chandan Kumar
+                    </div>
+                    <div class="green-text medium-text">
+                        owes you <span class="fw-bold">INR328.76</span>
+                    </div>
+                </div>
+            </li>
+            <li class="d-flex justify-content-start align-items-center mt-3">
+                <img src="avatar-ruby16.png" class="me-2" height="35px" style="border-radius: 50%;" alt="avatar"/>
+                <div class="lh-sm">
+                    <div class="fw-medium ">
+                        Vivek Singh
+                    </div>
+                    <div class="green-text medium-text">
+                        owes you <span class="fw-bold">INR298.56</span>
+                    </div>
+                </div>
+            </li>
+            <li class="d-flex justify-content-start align-items-center mt-3">
+                <img src="avatar-orange.png" class="me-2" height="35px" style="border-radius: 50%;" alt="avatar"/>
+                <div class="lh-sm">
+                    <div class="fw-medium ">
+                        Pratyush Padihary
+                    </div>
+                    <div class="green-text medium-text">
+                        owes you <span class="fw-bold">INR666.66</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="d-flex gap-1 mt-3 px-4 justify-content-center hidden" id="chart">
+        <div class=" col-5 d-flex flex-column align-items-end text-end text-white">
+            @for(amount of dueAmounts; track $index){
+                
+                <div [style.min-width.%]="oweWidth(amount.amount)()" style="height: 45px;" class="my-2 px-2 lh-sm pt-1 rounded-2 ornage-bg">
+                    <div class="fw-medium">{{amount.name}}</div>
+                    <div class="medium-text">INR{{amount.amount}}</div>
+                </div>
+            }
+            
+            
+        </div>
+
+        <img class="px-2" src="dashboard-person.png" alt="dashboard-person" height="200px">
+
+        <div class="col-5 d-flex flex-column align-items-start text-start">
+            @for(amount of owedAmounts; track $index){
+                
+                <div [style.min-width.%]="oweWidth(amount.amount)()" style="height: 50px;" class="my-2 px-2 lh-sm pt-1 rounded-2 green-bg text-white">
+                    <div class="fw-medium">{{amount.name}}</div>
+                    <div class="medium-text">INR{{amount.amount}}</div>
+                </div>
+            }
+            
+            
+        </div>
+    </div>
+
 </div>

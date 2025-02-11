@@ -1,3 +1,5 @@
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
+
 .light-btn{
     background-color: white;
     color: #1CC29F !important;
@@ -39,6 +41,75 @@
 
 .text-grey-light{
     color: #52595f;
+}
+
+.orange-btn{
+  background-color: #ff6600;
+  color: white;
+  font-weight: 500;
+  border: 1px solid #E55B2A;
+  border-bottom: 1px solid #BF3D10;
+  box-shadow: inset 0px 1px 0px 0px #FF8459;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  text-shadow: 0px -1px #D63C05;
+}
+
+.orange-btn:hover{
+  background-color: #e65c00;
+  color: white;
+  border: 1px solid #E55B2A !important;
+  border-bottom: 1px solid #BF3D10 !important;
+}
+
+.orange-btn:active{
+  box-shadow: inset 3px 3px 6px 0px #E55B2A;
+  color: white !important;
+  background-color: #e65c00 !important;
+  border: 1px solid #E55B2A !important;
+  border-bottom: 1px solid #BF3D10 !important;
+}
+
+.green-btn{
+  background-color: #5BC5A7;
+  color: white;
+  font-weight: 500;
+  border: 1px solid #52B196;
+  border-bottom: 1px solid #368E76;
+  box-shadow: inset 0px 1px 0px 0px #7ecab5;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  text-shadow: 0px -1px #58C4A5;
+}
+
+.green-btn:hover{
+  background-color: #48BE9D;
+  color: white;
+  background-color: #48BE9D;
+  border: 1px solid #52B196;
+  border-bottom: 1px solid #368E76;
+}
+
+.green-btn:active{
+  box-shadow: inset 3px 3px 6px 0px #52B196;
+  color: white !important;
+  background-color: #48BE9D !important;
+  border: 1px solid #52B196 !important;
+  border-bottom: 1px solid #368E76 !important;
+}
+
+.grey-border{
+  border: 1px solid #cccccc
+}
+
+.grey-bottom-border{
+  border-bottom: 1px solid #cccccc;
+}
+
+.grey-background{
+  background-color: #eeeeee;
+}
+
+.grey-text{
+  color: #666;
 }
 
 .lg-any, .lg-heart, .lg-house, .lg-plane {
