@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SecondaryFooterComponent } from './secondary-footer/secondary-footer.component';
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { DashboardComponent } from './main-page/dashboard/dashboard.component';
 
 export const routes: Routes = [
   // {
@@ -61,7 +62,18 @@ export const routes: Routes = [
     children: [
       {
         path:'',
-        component: MainPageComponent
+        component: MainPageComponent,
+        children: [
+          {
+            path: 'dashboard',
+            component: DashboardComponent
+          },
+          {
+            path: 'dashboard',
+            component: DashboardComponent,
+            outlet: 'right-sidebar'
+          }
+        ]
       },
       {
         path: '',

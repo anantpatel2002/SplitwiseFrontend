@@ -1,0 +1,79 @@
+<div class="col-10">
+    <div class="pt-2 d-flex flex-column">
+        <a class="ps-2 mt-1 text-decoration-none d-flex align-items-center" [routerLink]="[{outlets:{'right-sidebar':['dashboard'],'primary':['dashboard']}}]" routerLinkActive="active">
+            <img src="logo.svg" alt="" height="16px" width="16px" style="margin-bottom: 4px; filter: grayscale(100%)" />
+            <span class="ms-2" style="font-size: 17px">Dashboard</span>
+        </a>
+        <a class="ps-2 text-decoration-none actived" style="color: #ff652f" routerLink="recent-activity"
+            routerLinkActive="active">
+            <i class="bi bi-flag-fill"></i>
+            <span class="ms-2" style="font-size: 17px">Recent Activity</span>
+        </a>
+    </div>
+
+    <div class="ps-1 pt-2 d-flex align-items-center">
+        <div class="search-icon rounder-start-1 text-secondary rounded-start-1 bg-secondary-subtle">
+            <i class="bi bi-search"></i>
+        </div>
+        <input type="text" class="filter-input w-100 rounded-end-1" placeholder="Filter by name" />
+    </div>
+
+    <div class="mt-2 d-flex flex-column">
+        <a class="ps-2  text-decoration-none" routerLink="all-expenses" routerLinkActive="active">
+            <!-- <img src="logo.svg" alt="" height="18px" width="20px" style="margin-bottom: 10px; filter: grayscale(100%)" /> -->
+            <i class="bi bi-list-task" style="-webkit-text-stroke:1px;"></i>
+            <span class="ms-2" style="font-size: 17x">All Expenses</span>
+        </a>
+    </div>
+
+    <div class="groups-header mt-2 d-flex align-items-center justify-content-between px-2 bg-secondary-subtle">
+        <span class="text-secondary" style="font-size: small;">GROUPS</span>
+        <a class="text-decoration-none text-secondary" routerLink="add-group" routerLinkActive="active">
+            <span class="bi bi-plus"></span>
+            <span>add</span>
+        </a>
+    </div>
+
+    <div class="d-flex flex-column">
+        @for(group of demoGroups; track $index) {
+        <a class="ps-2 mt-1 text-decoration-none" [routerLink]="['group',group.id]" routerLinkActive="active">
+            <i class="bi bi-tag-fill"></i>
+            <span class="ms-2" style="font-size: 17x">{{group.name}}</span>
+        </a>
+    }
+    </div>
+
+    <div class="groups-header mt-2 d-flex align-items-center justify-content-between px-2 bg-secondary-subtle">
+        <span class="text-secondary" style="font-size: small;">FRIENDS</span>
+        <a class="text-decoration-none text-secondary" routerLink="add-group" routerLinkActive="active">
+            <span class="bi bi-plus"></span>
+            <span>add</span>
+        </a>
+    </div>
+
+    <div class="d-flex flex-column">
+        @for(friend of demoFriends; track $index) {
+        <a class="ps-2 mt-1 text-decoration-none" [routerLink]="['group',friend.id]" routerLinkActive="active">
+            <i class="bi bi-person-fill"></i>
+            <span class="ms-2" style="font-size: 17x">{{friend.name}}</span>
+        </a>
+    }
+    </div>
+
+    <div class="mt-4">
+        <div class="invite-header">
+            <p class="m-0 p-1">Invite friends</p>
+        </div>
+        <div class="invite-body border border-secondary-subtle border-top-0 p-2">
+            <input type="text" class="invite-input w-100 rounded-1 px-1 border border-secondary-subtle" placeholder="Enter an email address" />
+            <button class="invite-button rounded-1 mt-2 border border-secondary-subtle" style="font-size: small;">Send Invite</button>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center gap-1 mt-2">
+        <button class="facebook-btn rounded-1"><i class="bi bi-facebook"></i>Share</button>
+        <button class="twitter-btn rounded-1"><i class="bi bi-twitter-x"></i>Tweet</button>
+    </div>
+
+
+</div>

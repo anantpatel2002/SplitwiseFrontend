@@ -10,26 +10,6 @@ import { FooterComponent } from "./footer/footer.component";
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
-
-
-  headerFooterFlag = signal<boolean>(true);
-  urlString:string = ''
-
-  router = inject(Router);  
-
-  ngOnInit(): void {
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        this.urlString = event.url;
-        if(this.urlString.includes('/signup')){
-          this.headerFooterFlag.set(false);
-        }else{
-          this.headerFooterFlag.set(true);
-        }
-      }
-    });
-    
-  }
+export class AppComponent {
 
 }
