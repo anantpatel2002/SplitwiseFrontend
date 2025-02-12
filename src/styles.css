@@ -116,6 +116,10 @@
   color: #666;
 }
 
+.grey-text-light{
+  color: #999;
+}
+
 .lg-any, .lg-heart, .lg-house, .lg-plane {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
