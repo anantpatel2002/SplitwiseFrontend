@@ -6,7 +6,7 @@ import { LeftSidebarComponent } from "./left-sidebar/left-sidebar.component";
 
 @Component({
   selector: 'app-main-page',
-  imports: [RouterOutlet, GroupComponent, DashboardComponent, LeftSidebarComponent],
+  imports: [RouterOutlet, LeftSidebarComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css'
 })
