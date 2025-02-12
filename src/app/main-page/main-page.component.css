@@ -2,4 +2,9 @@
     min-height: 95vh;
     max-width: 960px;
     margin: auto;
+    margin-top: 40px;
+}
+
+.center-div{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }

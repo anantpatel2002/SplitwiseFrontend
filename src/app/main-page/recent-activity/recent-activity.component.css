@@ -1,0 +1,21 @@
+.profile-img{
+    bottom:-7px;
+    right:-7px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+.show-button{
+    border:1px solid #CECECE;
+    border-bottom: 1px solid #ACACAC;
+    box-shadow: inset 0 1px 0 #EBEBEB;
+    border-radius: 5px;
+    padding: 5px 60px;
+    margin: 20px auto 10px;
+    color: #333;
+
+}
+
+.show-button:hover{
+    background-color: #E6E6E6;
+}
