@@ -1,0 +1,15 @@
+.header-div{
+    height: 8%;
+    border-bottom: 1px solid #ccc;
+}
+
+.blue-text{
+    color: #389bcc77;
+    text-decoration: none;
+}
+
+.blue-text:hover{
+    color: #389bcc;
+    text-decoration: underline;
+}
+
