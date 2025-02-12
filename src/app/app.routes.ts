@@ -11,6 +11,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { DashboardComponent } from './main-page/dashboard/dashboard.component';
 import { GroupComponent } from './main-page/group/group.component';
 import { RecentActivityComponent } from './main-page/recent-activity/recent-activity.component';
+import { ProComponent } from './main-page/pro/pro.component';
 
 export const routes: Routes = [
   // {
@@ -72,7 +73,7 @@ export const routes: Routes = [
           },
           {
             path: 'dashboard',
-            component: DashboardComponent,
+            component: ProComponent,
             outlet: 'right-sidebar'
           },
           {
