@@ -122,11 +122,44 @@
 }
 
 .lg-icon path {
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-  }
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.small-text{
+  font-size: 13px;
+}
+
+
+.medium-text{
+  font-size: 15px;
+}
+
+.grey-text{
+  color: #858383
+}
+
+.light-grey-text{
+  color: #cecaca
+}
+
+.orange-text{
+  color: #FF652F;
+}
+
+.green-text{
+  color: #5BC5A7;
+}
+
+.green-bg{
+  background-color: #5BC5A7;
+}
+
+.ornage-bg{
+  background-color: #FF652F;
+}
   
   @keyframes sp1 {
     0%,

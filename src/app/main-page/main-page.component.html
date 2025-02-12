@@ -1,4 +1,4 @@
-<div class="main-div row">
+<div class="main-div d-flex">
     <!-- <div class="row"> -->
 <!--         <div class="col-3 left-sidebar" style="width: 180px;">a</div>
         <div class="p-0 center-div" style="width: 600px;">
@@ -7,15 +7,15 @@
         </div>
         <div class="col-3 right-sidebar" style="width: 180px;">c</div> -->
 
-        <div class="col-3 p-0 left-sidebar">
+        <div class="p-0 left-sidebar" style="width: 240px;">
             <app-left-sidebar/>
         </div>
-        <div class="col-6 p-0 center-div border border-secondary-subtle border-top-0 border-bottom-0">
+        <div class="col-7 p-0 center-div border border-secondary-subtle border-top-0 border-bottom-0">
             <router-outlet/>
             <!-- <app-dashboard/> -->
         </div>
-        <div class="col-3 right-sidebar">
-            <router-outlet name="right-sidebar"/>
+        <div class="col-2 right-sidebar bg-warning">
+            <!-- <router-outlet name="right-sidebar"/> -->a
         </div>
     <!-- </div> -->
 </div>
