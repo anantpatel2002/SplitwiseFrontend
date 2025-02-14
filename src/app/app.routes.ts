@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { DashboardComponent } from './main-page/dashboard/dashboard.component';
 import { GroupComponent } from './main-page/group/group.component';
+import { ExpenseComponent } from './main-page/group/expense/expense.component';
 
 export const routes: Routes = [
   // {
@@ -67,7 +68,7 @@ export const routes: Routes = [
         children: [
           {
             path: 'dashboard',
-            component: GroupComponent
+            component: ExpenseComponent
           }
         ]
       },
