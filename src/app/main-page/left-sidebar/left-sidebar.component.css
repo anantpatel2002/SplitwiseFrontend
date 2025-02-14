@@ -47,6 +47,10 @@
     background-color: #ff652f !important;
 }
 
+.search-icon:has(+ .filter-input:focus) i{
+    color: #fff !important;
+}
+
 .groups-header{
     opacity: 0.5;
 }

@@ -1,0 +1,31 @@
+<div>
+    <div class="h4 fw-bold p-3 bg-secondary-subtle border-bottom border-secondary-subtle">
+        Recent Activity
+    </div>
+
+    @for(number of [1,2,3,4,5,6,7,8,9,10];track $index){
+        <div class="px-3 pb-2 d-flex gap-3 align-items-center border-bottom">
+            <div class="position-relative">
+                <img src="logos/expense.png" alt="" height="50px">
+                <img src="logos/profile1.png" height="25px" class="position-absolute profile-img" alt="">
+            </div>
+            <div class="mt-2">
+                <div class="">
+                    <span class="fw-bold">Ishant Y.</span>
+                    added <span class="fw-bold">"Testing".</span>
+                </div>
+                <div [style.color]="number%2==0?'#ff652f':'#5bc5a7'">
+                    You owe <i class="bi bi-currency-rupee"></i>100.00
+                </div>
+                <div class="text-muted small">
+                    12:00 PM
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="px-3 pb-2 d-flex gap-3 align-items-center border-bottom">
+        <button class="show-button">Show more</button>
+    </div>
+
+</div>
