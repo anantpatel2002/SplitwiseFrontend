@@ -1,8 +1,9 @@
 import { Component, computed, inject, Renderer2, ViewChild } from '@angular/core';
+import { AddExpenseComponent } from "../../add-expense/add-expense.component";
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [AddExpenseComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
@@ -20,6 +21,7 @@ export class DashboardComponent {
   });
   
   asList = true;
+  showDialog: boolean = false;
   renderer = inject(Renderer2);
 
   toggleListView(view:string){
@@ -43,5 +45,9 @@ export class DashboardComponent {
       this.asList=!this.asList;
     }
     
+  }
+
+  toggleDialog() {
+    this.showDialog = !this.showDialog;
   }
 }

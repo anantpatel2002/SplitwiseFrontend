@@ -80,6 +80,10 @@ export const routes: Routes = [
           {
             path: 'recent-activity',
             component: RecentActivityComponent
+          },
+          {
+            path: 'group/:id',
+            component: GroupComponent
           }
         ]
       },

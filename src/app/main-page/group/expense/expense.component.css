@@ -1,3 +1,8 @@
+:host {
+    display: block;
+    overflow: hidden;
+  }
+
 textarea{
     box-shadow: inset 0px .5px 2px 0px #cccccc;
 }
