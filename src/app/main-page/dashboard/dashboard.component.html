@@ -1,7 +1,10 @@
+@if(showDialog){
+    <app-add-expense (expenseAdded)="toggleDialog()"/>
+}
 <div class="h-100">
     <div class="grey-bottom-border grey-background p-2 d-flex align-items-center fw-medium fs-5">
         <span class="fw-bold fs-4">Dashboard</span>
-        <div class="btn rounded-1 orange-btn ms-auto">Add an expense</div>
+        <div class="btn rounded-1 orange-btn ms-auto" (click)="toggleDialog()">Add an expense</div>
         <div class="btn rounded-1 green-btn ms-2">Settle up</div>
     </div>
     <div class="grey-bottom-border grey-background p-2 d-flex align-items-center justify-content-around fs-6 ">
