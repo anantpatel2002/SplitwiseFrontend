@@ -4,7 +4,7 @@
             <img src="logo.svg" alt="" height="16px" width="16px" style="margin-bottom: 4px; filter: grayscale(100%)" />
             <span class="ms-2" style="font-size: 17px">Dashboard</span>
         </a>
-        <a class="ps-2 text-decoration-none actived" style="color: #ff652f" routerLink="recent-activity"
+        <a class="ps-2 text-decoration-none actived" style="color: #ff652f" [routerLink]="[{outlets:{'primary':['recent-activity'],'right-sidebar':['recent-activity']}}]"
             routerLinkActive="active">
             <i class="bi bi-flag-fill"></i>
             <span class="ms-2" style="font-size: 17px">Recent Activity</span>

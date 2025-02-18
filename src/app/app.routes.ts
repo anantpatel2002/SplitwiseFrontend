@@ -12,6 +12,7 @@ import { DashboardComponent } from './main-page/dashboard/dashboard.component';
 import { GroupComponent } from './main-page/group/group.component';
 import { RecentActivityComponent } from './main-page/recent-activity/recent-activity.component';
 import { ProComponent } from './main-page/pro/pro.component';
+import { RightSidebarComponent } from './main-page/right-sidebar/right-sidebar.component';
 
 export const routes: Routes = [
   // {
@@ -79,7 +80,12 @@ export const routes: Routes = [
           {
             path: 'recent-activity',
             component: RecentActivityComponent
-          }
+          },
+          {
+            path: 'recent-activity',
+            component: RightSidebarComponent,
+            outlet: 'right-sidebar'
+          },
         ]
       },
       {

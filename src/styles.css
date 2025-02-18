@@ -4,6 +4,11 @@
   font-family: Lato;
 }
 
+::selection{
+  color: #fff;
+  background-color: #1CC29F;
+}
+
 .light-btn{
     background-color: white;
     color: #1CC29F !important;
