@@ -36,7 +36,7 @@
 
     <div class="d-flex flex-column">
         @for(group of demoGroups; track $index) {
-        <a class="ps-2 mt-1 text-decoration-none" [routerLink]="['group',group.id]" routerLinkActive="active">
+        <a class="ps-2 mt-1 text-decoration-none" [routerLink]="['group', group.id]" routerLinkActive="active">
             <i class="bi bi-tag-fill"></i>
             <span class="ms-2" style="font-size: 17x">{{group.name}}</span>
         </a>
@@ -53,7 +53,7 @@
 
     <div class="d-flex flex-column">
         @for(friend of demoFriends; track $index) {
-        <a class="ps-2 mt-1 text-decoration-none" [routerLink]="['group',friend.id]" routerLinkActive="active">
+        <a class="ps-2 mt-1 text-decoration-none" [routerLink]="['friend',friend.id]" routerLinkActive="active">
             <i class="bi bi-person-fill"></i>
             <span class="ms-2" style="font-size: 17x">{{friend.name}}</span>
         </a>

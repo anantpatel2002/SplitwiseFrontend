@@ -1,0 +1,23 @@
+<div class="dialog-container">
+    <div class="dialog-box bg-white rounded-2" >
+        <div class="title fw-bold text-white custom-padding">
+            Add an expense
+        </div>
+        <div class="custom-padding light-grey-bottom-border small-text d-flex align-items-center">
+            <div class="w-25">
+                With <span class="fw-bold">you</span> and:
+            </div>
+            <input class="w-75" type="text" placeholder="Enter names or email addresses"> 
+        </div>
+        <div class="d-flex justify-content-center mx-5 my-4 gap-3" style="box-sizing: border-box;">
+            <img class="rounded-2 col-3" src="dining-out@2x.png" alt="category-image" height="60px">
+            <div class="col-9">
+                <input type="text" class="p-0 custom-text" style="border-bottom: 1px dashed rgb(194, 193, 193); width: 90%;" placeholder="Enter a Description">
+            </div>
+        </div>
+        
+        the dialog box
+        <button class="text-danger" (click)="expenseAdded.emit()">Close</button>
+    </div>
+
+</div>

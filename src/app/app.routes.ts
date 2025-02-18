@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { DashboardComponent } from './main-page/dashboard/dashboard.component';
 import { GroupComponent } from './main-page/group/group.component';
+import { ExpenseComponent } from './main-page/group/expense/expense.component';
 import { RecentActivityComponent } from './main-page/recent-activity/recent-activity.component';
 import { ProComponent } from './main-page/pro/pro.component';
 import { RightSidebarComponent } from './main-page/right-sidebar/right-sidebar.component';
@@ -86,6 +87,10 @@ export const routes: Routes = [
             component: RightSidebarComponent,
             outlet: 'right-sidebar'
           },
+          {
+            path: 'group/:id',
+            component: GroupComponent
+          }
         ]
       },
       {

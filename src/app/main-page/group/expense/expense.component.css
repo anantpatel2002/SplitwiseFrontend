@@ -1,0 +1,19 @@
+:host {
+    display: block;
+    overflow: hidden;
+  }
+
+textarea{
+    box-shadow: inset 0px .5px 2px 0px #cccccc;
+}
+
+textarea::placeholder{
+    color: #cecaca;
+    padding: 2px;
+}
+
+textarea:focus{
+    border: 1px solid #75B9F0 !important;
+    outline: none;
+    box-shadow: 1px 0px 7px 0px #75B9F0;
+}
