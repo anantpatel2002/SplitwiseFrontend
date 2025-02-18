@@ -1,0 +1,105 @@
+.nav-btn{
+    border-radius: 5px;
+    background-color: #fff;
+    border:1px solid #EFEFEF;
+    color: #C2C2C2;
+    /* text-shadow: 0 0.5px 0 #333; */
+}
+
+.nav-btn:hover{
+    border:1px solid #e5e5e5;
+    color: #999;
+}
+
+.active{
+    background-color: #eee;
+    border:1px solid #D6D6D6;
+    border-bottom-color: #B2B2B2;
+    color: #333;
+    text-shadow: 0 0.3px 0 #333;
+}
+
+.active:hover{
+    border:1px solid #D6D6D6;
+    border-bottom-color: #B2B2B2;
+    color: #333;
+}
+
+.view-details-btn{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: smaller;
+    width: fit-content;
+    line-height: 13px;
+}
+
+.view-details-btn:hover{
+    border-bottom: 1px solid;
+}
+
+.whiteboard-btn{
+    border: 1px solid #ccc;
+    color: #333;
+    font-size: small;
+    text-align: start;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px 0;
+    white-space: pre-line;
+    background-color: #F5F5F5;
+}
+.whiteboard-btn:hover{
+    background-color: #eee;
+}
+
+#whiteboard-edit-area{
+    height: 150px;
+    border: 1px solid #ccc;
+    outline: none;
+    padding-left: 5px;
+    border-radius: 3px;
+}
+
+#whiteboard-edit-area:focus{
+    box-shadow: 0 0 5px #68B9D1 ;
+    border-color: #56BBD9;
+}
+
+.blue-btn{
+    border: 1px solid #3C98B3;
+    color: #fff;
+    text-shadow: 0 -1px 0 #27748B;
+    box-shadow: inset 0 1px 0 #68B9D1;
+    background-image:linear-gradient(#56BBD9,#3299B7) ;
+    border-radius: 3px;
+    font-size: small;
+    padding: 3px 10px;
+}
+
+.blue-btn:hover{
+    background-image:linear-gradient(#3EA4C2,#2F96B4) ;
+}
+
+.blue-btn:active{
+    background-image:linear-gradient(#3EA4C2,#2F96B4) ;
+    box-shadow: inset 0 1px 3px #888;
+}
+
+.settings-btn{
+    border:1px solid #ccc;
+    border-bottom-color: #B2B2B2;
+    text-align: start;
+    font-size: small;
+    color: #333;
+    width: 100%;
+    margin: 0 0 5px;
+    padding: 3px 5px;
+    background: linear-gradient(#FFF,#E5E5E5);
+    border-radius: 3px;
+}
+
+.settings-btn:hover{
+    background: #eee;
+}

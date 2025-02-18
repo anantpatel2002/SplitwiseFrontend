@@ -1,0 +1,110 @@
+<div>
+    <nav class="d-flex justify-content-between">
+        <button class="nav-btn" [class]="navigation=='balances'?'active':null" (click)="navigation = 'balances'"><i class="bi bi-list"></i></button>
+        <button class="nav-btn" [class]="navigation=='expenses'?'active':null" (click)="navigation = 'expenses'"><i class="bi bi-calendar3"></i></button>
+        <button class="nav-btn" [class]="navigation=='trends'?'active':null" (click)="navigation = 'trends'"><i class="bi bi-file-earmark-bar-graph"></i></button>
+        <button class="nav-btn" [class]="navigation=='whiteboard'?'active':null" (click)="navigation = 'whiteboard'"><i class="bi bi-chat-fill"></i></button>
+        <button class="nav-btn" [class]="navigation=='settings'?'active':null" (click)="navigation = 'settings'"><i class="bi bi-gear-fill"></i></button>
+    </nav>
+
+    <div class="mt-3" id="group-sidebar">
+
+        @if(navigation=='balances'){
+            <div id="relationship-balances" class="">
+                <p class="text-uppercase grey-text-light small fw-bold">Group Balances</p>
+                <div>
+                    @for (item of demoData; track $index) {
+                    <div class="d-flex my-3 align-items-center gap-2">
+                        <img src="logos/profile2.png" class="rounded-5 border border-secondary-subtle" height="45" alt="">
+                        <div>
+                            <p class="m-0">{{item.name}}</p>
+                            @if(item.owesInGroup == 0) {
+                            <p class="m-0 text-muted small-text">
+                                settled up
+                            </p>
+                            } @else if(item.owesInGroup > 0) {
+                            <p class="m-0 green-text small-text">
+                                gets back <span class="fw-bold medium-text"><i class="bi bi-currency-rupee"></i>{{item.owesInGroup}}</span>
+                            </p>
+                            } @else {
+                            <p class="m-0 orange-text small-text">
+                                owes <span class="fw-bold medium-text"><i class="bi bi-currency-rupee"></i>{{item.owesInGroup | getAbsoluteNumber}}</span>
+                            </p>
+                            }
+                        </div>
+                    </div>
+                }
+                <a href="" class="view-details-btn">View Details <span style="font-size: 8px; -webkit-text-stroke: 0.3px;"> <i class="bi bi-chevron-double-right"></i> </span></a>
+                </div>
+            </div>
+        }@else if (navigation == 'expenses') {
+            <div id="upcoming-balances" class="">
+                <p class="text-uppercase mb-1 grey-text-light small fw-bold">Upcoming expenses</p>
+                <p class="small lh-sm">You have not added any recurring expenses yet</p>
+            </div>
+        }@else if (navigation == 'trends') {
+            <div id="trends" class="">
+                <p class="text-uppercase grey-text-light small fw-bold">Trends this month</p>
+                <div>
+                    <p  class="m-0">Total you paid for</p>
+                    <p class="small-text green-text mb-1"><i class="bi bi-currency-rupee"></i>10</p>
+                </div>
+    
+                <div>
+                    <p  class="m-0">Your total share</p>
+                    <p class="small-text orange-text mb-1"><i class="bi bi-currency-rupee"></i>10</p>
+                </div>
+    
+                <div>
+                    <p  class="m-0">Payments made</p>
+                    <p class="small-text green-text mb-1"><i class="bi bi-currency-rupee"></i>10</p>
+                </div>
+    
+                <div>
+                    <p  class="m-0">Payments received</p>
+                    <p class="small-text orange-text mb-1"><i class="bi bi-currency-rupee"></i>10</p>
+                </div>
+    
+                <div>
+                    <p  class="m-0">Total change in balance</p>
+                    <h5 class="green-text mb-1 fw-bold">+<i class="bi bi-currency-rupee"></i>10</h5>
+                </div>
+            </div>
+        }@else if (navigation == 'whiteboard'){
+            <div id="whiteboard" class="">
+                @if(!whiteboardDisplay){
+                    <div class="whiteboard-view"> 
+                        <p class="text-uppercase mb-1 grey-text-light small fw-bold">Whiteboard</p>
+                        <button class="whiteboard-btn w-100" (click)="whiteboardDisplay = !whiteboardDisplay">{{whiteboardData.trim() != '' ? whiteboardData : 'Click here to edit whiteboard!'}}</button>
+                        <p class="lh-sm grey-text-light" style="font-size:11px;">Use the whiteboard to remember important info, like your landlord’s address or emergency contact info.</p>
+                    </div>
+                }
+                @else{
+                    <div class="whiteboard-edit">
+                        <textarea name="" id="whiteboard-edit-area" [(ngModel)]="whiteboardData"></textarea>
+                        <button class="blue-btn" (click)="whiteboardDisplay = !whiteboardDisplay">Save changes</button>
+        
+                    </div>
+                }
+            </div>
+        }@else if (navigation == 'settings') {
+            <div id="settings" class="">
+                <p class="text-uppercase grey-text-light small fw-bold">Group Settings</p>
+                <button class="settings-btn">Edit group settings</button>
+                <button class="settings-btn">Hide items involving me</button>
+                <button class="settings-btn">Send a balance reminder</button>
+                <button class="settings-btn">Export as spreadsheet</button>
+            </div>
+        }
+       
+
+        
+
+        
+
+        
+
+        
+
+    </div>
+</div>
