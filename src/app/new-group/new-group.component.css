@@ -1,0 +1,143 @@
+.group-name-input{
+    /* height: 50px; */
+    font-size: 30px;
+    padding: 0 5px;
+    border:1px solid #cccccc;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    max-width: 350px;
+    outline: none;
+    background-color: transparent;
+}
+
+.group-name-input:focus{
+    border:1px solid #52bef5;
+    box-shadow: 0 0 8px #9ddaf8;
+}
+
+.group-name-container::before{
+    content: 'Group Name';
+    color: #ccc;
+    font-size: 30px;
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    z-index: -1;
+}
+
+.group-name-container.disable-placeholder::before{
+    content: '';
+}
+
+.group-name-container:has(> .group-name-input:focus)::before  {
+    color: #eee;
+}
+
+
+
+.invite-link,.add-person{
+    color: #0088cc;
+}
+
+.invite-link:hover,.add-person:hover{
+    text-decoration: underline;
+    color: #1E698F;
+    cursor: pointer;
+}
+
+.group-type-select{
+    background: linear-gradient(to bottom, #FCFCFC 10%, #e9e9e9);
+    padding: 5px;
+    color: #333;
+    border-color: #ccc;
+    border-bottom-color: #aaa;
+    outline: none;
+}
+
+.group-type-select:active{
+   box-shadow: inset 0 3px 10px #aaa;
+}
+
+.grey-text{
+    color: #999999;
+}
+
+
+.small-font{
+    font-size: 13px;
+}
+
+.remove-btn{
+    color: #CC0000;
+    position: absolute;
+    right: -30px;
+    top: -5px;
+    cursor: pointer;
+}
+
+.remove-btn:hover{
+    text-decoration: underline;
+}
+
+
+.dropdown-button{
+    user-select: none;
+    width: fit-content;
+    background: linear-gradient(to bottom, #FCFCFC 10%, #e9e9e9);
+    color: #333;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    border-bottom-color: #aaa;
+
+}
+
+.dropdown-button:hover{
+    background: #ececec;
+    color: white;
+}    
+
+.dropdown-button.active{
+    background: #ececec;
+   box-shadow: inset 0 3px 10px #aaa;
+}
+
+.dropdown-name{
+    color: #333;
+
+}
+
+.dropdown-caret{
+    margin-top: -4px;
+    margin-left: 5px;
+    fill: rgba(34, 34, 34, 0.432);
+}
+
+.dropdown-button.active .dropdown-caret,.dropdown-button:hover .dropdown-caret{
+    fill: #333 !important;
+}
+
+
+ul{
+    list-style-type: none;
+    background: white;
+    padding-left: 0px;
+    width: 190px;
+    bottom: -50px;
+    left: 0px;
+    border: 1px solid #bebebe94;
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    
+}
+
+li{
+    padding-left: 8px;
+    padding-block: 3px;
+    font-weight: 400;
+}
+
+li:hover{
+    background-color: #48BE9D;
+    color: white;
+    cursor: pointer;
+    /* border-radius: 3px 3px 0px 0px; */
+}

@@ -14,6 +14,7 @@ import { ExpenseComponent } from './main-page/group/expense/expense.component';
 import { RecentActivityComponent } from './main-page/recent-activity/recent-activity.component';
 import { ProComponent } from './main-page/pro/pro.component';
 import { RightSidebarComponent } from './main-page/right-sidebar/right-sidebar.component';
+import { NewGroupComponent } from './new-group/new-group.component';
 
 export const routes: Routes = [
   // {
@@ -108,6 +109,10 @@ export const routes: Routes = [
   {
     path:'signup',
     component: SignupComponent
+  },
+  {
+    path:'group/new',
+    component:NewGroupComponent
   },
   {
     path:'primary-header',
