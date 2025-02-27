@@ -11,10 +11,10 @@ import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule } f
   animations: [
     trigger('fadeAnimation', [
       transition(':enter',
-        animate('0.2s ease-in-out', keyframes([style({ opacity: 0, offset: 0 }), style({ opacity: 1, offset: 1 })]))
+        animate('0.3s ease-in-out', keyframes([style({ opacity: 0, offset: 0 }), style({ opacity: 1, offset: 1 })]))
       ),
       transition(':leave',
-        animate('0.2s ease-in-out', keyframes([style({ opacity: 1, offset: 0 }), style({ opacity: 0, offset: 1 })]))
+        animate('0.3s ease-in-out', keyframes([style({ opacity: 1, offset: 0 }), style({ opacity: 0, offset: 1 })]))
       )
     ])
   ]

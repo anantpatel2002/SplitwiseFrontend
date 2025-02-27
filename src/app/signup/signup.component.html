@@ -7,13 +7,13 @@
         <p class="fw-bold grey-text">INTRODUCE YOURSELF</p>
         <label class="d-block fw-medium fs-5 mb-1" for="name">Hi there! My name is</label>
         <input (keypress)="animation()" autocomplete="off" class="name-input rounded-1 mb-3 w-100" type="text" name="name" id="name">
-        <div id="email-pw" class="hidden" style="max-height: 150px;">
+        <div id="email-pw" class="hidden">
             <label class="d-block mb-1" for="email">Here's my <span class="fw-bold">email address</span></label>
             <input class="mb-3 rounded-1 w-100 email-pw-input" type="text" name="email" id="email">
             <label class="d-block mb-1" for="password">And here's my <span class="fw-bold">password</span></label>
             <input class="rounded-1 w-100 email-pw-input" type="text" name="password" id="password">
         </div>
-        <div id="currency" class="hidden" style="max-height: 75px;">
+        <div id="currency" class="hidden">
             <label class="mt-3 mb-1 d-block" for="currency">And here’s the currency that I use:</label>
             <select name="currency" id="currency" class="w-25 bg-secondary-subtle">
                 @for (currency of currencies; track $index) {
