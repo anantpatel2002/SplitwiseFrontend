@@ -71,6 +71,11 @@ export const routes: Routes = [
         component: MainPageComponent,
         children: [
           {
+            path:'',
+            redirectTo: 'dashboard',
+            pathMatch: 'prefix'
+          },
+          {
             path: 'dashboard',
             component: DashboardComponent
           },
