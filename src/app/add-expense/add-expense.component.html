@@ -1,5 +1,5 @@
 <div class="dialog-container">
-    <div class="dialog-box bg-white rounded-2" >
+    <div class="dialog-box bg-white rounded-2" [@animateFront]="state" >
         <div class="title fw-bold text-white custom-padding">
             Add an expense
         </div>
@@ -9,15 +9,33 @@
             </div>
             <input class="w-75" type="text" placeholder="Enter names or email addresses"> 
         </div>
-        <div class="d-flex justify-content-center mx-5 my-4 gap-3" style="box-sizing: border-box;">
-            <img class="rounded-2 col-3" src="dining-out@2x.png" alt="category-image" height="60px">
+        <div class="d-flex justify-content-center align-items-center mx-5 mt-4 mb-3 gap-3" style="box-sizing: border-box;">
+            <img class="rounded-2 category-image col-3" src="dining-out@2x.png" alt="category-image" height="60px">
             <div class="col-9">
                 <input type="text" class="p-0 custom-text" style="border-bottom: 1px dashed rgb(194, 193, 193); width: 90%;" placeholder="Enter a Description">
+                <div style="border-bottom: 1px dashed rgb(194, 193, 193); width: 90%;">
+                    <span class="me-1 fs-5">$</span>
+                    <input type="text" class="p-0 fs-3 fw-bold" style="width: 85%;" placeholder="0.00">
+                </div>
             </div>
         </div>
-        
-        the dialog box
-        <button class="text-danger" (click)="expenseAdded.emit()">Close</button>
+        <div class="text-center small-text lh-bw-md-lg">
+            Paid by <span class="green-text rounded-5 px-1 dashed-grey-border light-grey-bg hover-grey" role="button" style="padding-bottom: 2px;" (click)="startAnimation()">you</span> and split <span class="green-text rounded-5 px-1 dashed-grey-border light-grey-bg hover-grey" role="button" style="padding-bottom: 2px;">equally.</span> <br> ($0.00/person)
+        </div>
+        <div class="d-flex gap-3 justify-content-center mt-3 mb-2">
+            <div class="rounded-5 text-center light-grey-bg border border-grey grey-text small-text px-4 hover-grey" role="button" style="padding-block: 1px;">February 21, 2025</div>
+            <div class="rounded-5 text-center light-grey-bg border border-grey grey-text small-text px-4 hover-grey" role="button" style="padding-block: 1px;">Add image/notes</div>
+        </div>
+        <div class="rounded-5 text-center light-grey-bg border border-grey grey-text small-text col-5 mb-4 px-2 mx-auto hover-grey" role="button" style="padding-block: 1px; ">Group Testing</div>
+        <div class="light-grey-bottom-border"></div>
+        <div class="my-2 d-flex justify-content-end gap-2 mx-2">
+            <button class="white-btn py-2 px-3 rounded-2" (click)="expenseAdded.emit()">Cancel</button>
+            <button class="green-btn py-2 px-3 rounded-2" >Save</button>
+        </div>
     </div>
+    @if(showBackDiv){
+        <!-- <app-choose-payer class="app-zindex" [@animateBack]="state" (closeDiv)="closeAnimation() "></app-choose-payer> -->
+        <app-date-picker-component class="app-zindex" [@animateBack]="state" (closeDiv)="closeAnimation() "></app-date-picker-component>
+    }
 
 </div>
