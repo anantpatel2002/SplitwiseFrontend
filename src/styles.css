@@ -86,7 +86,7 @@
   border-bottom: 1px solid #368E76;
   box-shadow: inset 0px 1px 0px 0px #7ecab5;
   transition: transform 0.1s ease, box-shadow 0.1s ease;
-  text-shadow: 0px -1px #58C4A5;
+  text-shadow: 0px -1px #3f8b76;
 }
 
 .green-btn:hover{
@@ -105,6 +105,31 @@
   border-bottom: 1px solid #368E76 !important;
 }
 
+.white-btn{
+  background-color: #F6F6F6;
+  color: black;
+  font-weight: 500;
+  border: 1px solid #D1D1D1;
+  border-bottom: 1px solid #B8B8B8;
+  box-shadow: inset 0px 1px 0px 0px #EDEDED;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.white-btn:hover{
+  background-color: #E9E9E9;
+  color: black;
+  border: 1px solid #D1D1D1;
+  border-bottom: 1px solid #B8B8B8;
+}
+
+.white-btn:active{
+  box-shadow: inset 0px 3px 4px 0px #a2a8a6;
+  color: black !important;
+  background-color: #E9E9E9 !important;
+  border: 1px solid #D1D1D1 !important;
+  border-bottom: 1px solid #B8B8B8 !important;
+}
+
 .grey-border{
   border: 1px solid #cccccc
 }
@@ -119,6 +144,10 @@
 
 .grey-background{
   background-color: #eeeeee;
+}
+
+.light-grey-bg{
+  background-color: #f5f3f3;
 }
 
 .grey-text{

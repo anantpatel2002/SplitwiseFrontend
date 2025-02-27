@@ -1,9 +1,10 @@
 import { Component, computed, inject, Renderer2, ViewChild } from '@angular/core';
 import { AddExpenseComponent } from "../../add-expense/add-expense.component";
+import { ChoosePayerComponent } from "../../choose-payer/choose-payer.component";
 
 @Component({
   selector: 'app-dashboard',
-  imports: [AddExpenseComponent],
+  imports: [AddExpenseComponent, ChoosePayerComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
