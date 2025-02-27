@@ -15,7 +15,7 @@
         <div class="group-name-container position-relative" id="group-name-container-id">
             <input (keypress)="animation()" [formControl]="groupName" autocomplete="off" class="group-name-input rounded-1 mb-3 w-100 ps-2" type="text" name="group-name" id="group-name">
         </div>
-        <div id="expand" class="">
+        <div id="expand" class="hidden">
             @if(isAddingManually()){
                 <div id="add-people" @fadeAnimation (@fadeAnimation.done)="onAnimationDone($event)" style="max-width: 360px;">
                     <hr class="border-top border-secondary-subtle mb-3">
