@@ -2,10 +2,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { ChoosePayerComponent } from "../choose-payer/choose-payer.component";
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 import { DatePickerComponentComponent } from '../date-picker-component/date-picker-component.component';
+import { ChooseGroupComponent } from "../choose-group/choose-group.component";
+import { AddImageNotesComponent } from '../add-image-notes/add-image-notes.component';
+import { ChooseCategoryComponent } from '../choose-category/choose-category.component';
 
 @Component({
   selector: 'app-add-expense',
-  imports: [ChoosePayerComponent, DatePickerComponentComponent],
+  imports: [ChoosePayerComponent, DatePickerComponentComponent, ChooseGroupComponent, AddImageNotesComponent, ChooseCategoryComponent],
   templateUrl: './add-expense.component.html',
   styleUrl: './add-expense.component.css',
   animations: [
@@ -55,15 +58,30 @@ export class AddExpenseComponent {
   @Output() expenseAdded = new EventEmitter();
 
   state = 'start';
-  showBackDiv = false;
+  showBackDiv = [false, false, false, false, false];
 
-  startAnimation() {
-    this.showBackDiv = true;
+  startAnimation(index: number) {
+    const result = this.showBackDiv.reduce((acc, value, index) =>{
+      if(value) {
+        this.closeAnimation(index);
+        console.log('current index' + index);
+        acc.push(index);
+      }
+      
+      return acc;
+    }, [] as number[]);
+    console.log(result);
+    
+    if(!result.includes(index)) {
+      this.showBackDiv[index] = true;
     this.state = 'end';
+    }
   }
 
-  closeAnimation() {
+
+
+  closeAnimation(index: number) {
     this.state = 'start';
-    this.showBackDiv = false;
+    this.showBackDiv[index] = false;
   }
 }

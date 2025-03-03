@@ -138,6 +138,10 @@
   border-bottom: 1px solid #cccccc;
 }
 
+.grey-right-border{
+  border-right: 1px solid #cccccc !important;
+}
+
 .light-grey-bottom-border{
   border-bottom: 1px solid #EEEEEE;
 }
