@@ -6,7 +6,6 @@ import { HeaderComponent } from './header/header.component';
 import { LoggedInHeaderComponent } from './logged-in-header/logged-in-header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SecondaryFooterComponent } from './secondary-footer/secondary-footer.component';
-import { AppComponent } from './app.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { DashboardComponent } from './main-page/dashboard/dashboard.component';
 import { GroupComponent } from './main-page/group/group.component';
@@ -15,12 +14,14 @@ import { RecentActivityComponent } from './main-page/recent-activity/recent-acti
 import { ProComponent } from './main-page/pro/pro.component';
 import { RightSidebarComponent } from './main-page/right-sidebar/right-sidebar.component';
 import { NewGroupComponent } from './new-group/new-group.component';
+import { AuthGuard, LoggedIn } from './auth-guard.service';
 
 export const routes: Routes = [
-  // {
-  //   path: 'homepage',
-  //   component: HomepageComponent,
-  // },
+  {
+    path: '',
+    redirectTo: 'homepage',
+    pathMatch: 'full'
+  },
   {
     path: 'homepage',
     children: [
@@ -38,7 +39,8 @@ export const routes: Routes = [
         component: FooterComponent,
         outlet: 'footer'
       }
-    ]
+    ],
+    canActivate:[AuthGuard]
   },
   {
     path:'home',
@@ -61,7 +63,8 @@ export const routes: Routes = [
         component: FooterComponent,
         outlet: 'footer'
       }
-    ]
+    ],
+    canActivate:[AuthGuard]
   },
   {
     path:'main-page',
@@ -97,7 +100,8 @@ export const routes: Routes = [
             path: 'group/:id',
             component: GroupComponent
           }
-        ]
+        ],
+        canActivate:[LoggedIn]
       },
       {
         path: '',
@@ -113,11 +117,13 @@ export const routes: Routes = [
   },
   {
     path:'signup',
-    component: SignupComponent
+    component: SignupComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:'group/new',
-    component:NewGroupComponent
+    component:NewGroupComponent,
+    canActivate:[LoggedIn]
   },
   {
     path:'primary-header',
