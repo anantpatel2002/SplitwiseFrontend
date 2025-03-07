@@ -1,0 +1,27 @@
+.dialog-box2{
+    width: 140px;
+    border: 1px solid #999999;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-193px);
+}
+
+.inner-div{
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.title{
+    font-size: 19px;
+    background-color: #5CC5A7;
+    text-shadow: 0px -1px #318A71;
+    border-bottom: 1px solid #36977B;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.custom-padding{
+    padding: 5px 9px;
+}
+
+.hover-grey:hover{
+    background-color: #EEEEEE;
+}

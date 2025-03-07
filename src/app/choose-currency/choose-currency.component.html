@@ -1,0 +1,13 @@
+<div class="dialog-box2 bg-white rounded-2 position-absolute">
+    <div class="title fw-bold text-white custom-padding d-flex align-items-center justify-content-between">
+        <div>Choose currency</div>
+        <div class="ms-auto text-white fw-bold fs-5" role="button" (click)="closeDiv.emit()">×</div>
+    </div>
+    <div class="inner-div">
+        @for (currencyCode of CURRENCY_CODES; track $index) {
+            <div class="d-flex p-2 hover-grey light-grey-bottom-border" role="button">
+                <div>{{currencyCode}}</div>
+            </div>
+        }
+    </div>
+</div>

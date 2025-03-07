@@ -1,0 +1,25 @@
+
+<div class="dialog-box2 bg-white rounded-2 position-absolute">
+    <div class="title fw-bold text-white custom-padding d-flex align-items-center justify-content-between">
+        <div>Choose a category</div>
+        <div class="ms-auto text-white fw-bold fs-5" role="button" (click)="closeDiv.emit()">×</div>
+    </div>
+    <div class="d-flex rounded-bottom-1">
+        <div class="col-6 rounded-bottom-1">
+            @for (category of categories; track $index) {
+                <div class="d-flex align-items-center justify-content-between px-2 hover-grey grey-bottom-border-dark grey-right-border" [style.background-color]="category=='Shopping'?darkGrey:white" [class.rounded-bottom-1]="$index+1==catSize" role="button" style="padding-block: 10px; background-color: #ffffff;" (mouseenter)="setSubCategory(category)">
+                    <div class="medium-text">{{category}}</div>
+                    <i class="bi bi-chevron-right mt-1" style="-webkit-text-stroke: 1.5px; font-size: 13px;"></i>
+                </div>
+            }
+        </div>
+        <div class="col-6 rounded-bottom-1" style="background-color: #EEEEEE;" (mouseleave)="setSubCategory('Shopping')" >
+            @for (subCategory of subCategories[key]; track $index) {
+                <div class="d-flex align-items-center justify-content-between px-2 hover-grey grey-right-border" [style.background-color]="subCategory=='Electronics'?darkGrey:lightGrey" role="button" style="padding-block: 5px; border-bottom: 1px solid #c2c1c1;">
+                    <div class="medium-text">{{subCategory}}</div>
+                    <i class="bi bi-chevron-right mt-1" style="-webkit-text-stroke: 1.5px; font-size: 13px;"></i>
+                </div>
+            }
+        </div>
+    </div>
+</div>

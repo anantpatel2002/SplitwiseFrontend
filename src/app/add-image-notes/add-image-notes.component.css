@@ -1,0 +1,39 @@
+.dialog-box2{
+    width: 330px;
+    border: 1px solid #999999;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-193px);
+}
+
+.title{
+    font-size: 19px;
+    background-color: #5CC5A7;
+    text-shadow: 0px -1px #318A71;
+    border-bottom: 1px solid #36977B;
+    border-radius: 5px 5px 0px 0px;
+}
+
+textarea{
+    outline: none;
+}
+
+
+.custom-padding{
+    padding: 5px 9px;
+}
+
+.hover-grey:hover{
+    background-color: #EEEEEE;
+}
+
+#whiteboard-edit-area{
+    border: 1px solid #ccc;
+    outline: none;
+    padding-left: 5px;
+    border-radius: 3px;
+}
+
+#whiteboard-edit-area:focus{
+    box-shadow: 0 0 5px #68B9D1 ;
+    border-color: #56BBD9;
+}
